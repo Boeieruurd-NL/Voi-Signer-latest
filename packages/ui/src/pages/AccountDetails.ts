@@ -47,6 +47,24 @@ const AccountDetails: FunctionalComponent = (props: any) => {
     });
   };
 
+  function getTransactionExplorerURL(type: string, ledger: string, id: number): string {
+    const base = {
+      'TestNet': 'https://testnet.algoexplorer.io',
+      'MainNet': 'https://algoexplorer.io',
+      'Voi Testnet': 'https://voi.observer/explorer'
+    }[ledger] || 'https://some-default-explorer.com';
+  
+    switch (type) {
+      case 'application':
+        return `${base}/application/${id}`;
+      case 'asset':
+        return `${base}/asset/${id}`;
+      default:
+        return `${base}/unknown/${id}`;
+    }
+  }
+  
+
   useEffect(() => {
     for (let i = store.wallet[ledger].length - 1; i >= 0; i--) {
       if (store.wallet[ledger][i].address === address) {
@@ -99,11 +117,11 @@ const AccountDetails: FunctionalComponent = (props: any) => {
                   style="cursor: pointer;"
                   class="has-tooltip-arrow has-tooltip-right has-tooltip-fade has-tooltip-primary ml-1"
                   target="_blank"
-                  href=${`https://goalseeker.purestake.io/algorand/${ledgerName}/application/${oia.id}`}
-                  data-tooltip="View on GoalSeeker"
-                  aria-label="view address info on goal seeker"
+                  href=${getTransactionExplorerURL('application', ledger, oia.id)}
+                  data-tooltip="View on Explorer"
+                  aria-label="view address info on Explorer"
                 >
-                  <i class="fas fa-external-link-alt has-text-link-dark px-1"></i>
+                  <i class="fas fa-external-link-alt has-text-link-light px-1"></i>
                 </a>
               </span>
             `
@@ -130,11 +148,11 @@ const AccountDetails: FunctionalComponent = (props: any) => {
                   style="cursor: pointer;"
                   class="has-tooltip-arrow has-tooltip-right has-tooltip-fade has-tooltip-primary ml-1"
                   target="_blank"
-                  href=${`https://goalseeker.purestake.io/algorand/${ledgerName}/asset/${cas.index}`}
+                  href=${getTransactionExplorerURL('asset', ledger, cas.index)}
                   data-tooltip="View on GoalSeeker"
                   aria-label="view address info on goal seeker"
                 >
-                  <i class="fas fa-external-link-alt has-text-link-dark px-1"></i>
+                  <i class="fas fa-external-link-alt has-text-link-light px-1"></i>
                 </a>
               </span>
             `
@@ -155,11 +173,11 @@ const AccountDetails: FunctionalComponent = (props: any) => {
                   style="cursor: pointer;"
                   class="has-tooltip-arrow has-tooltip-right has-tooltip-fade has-tooltip-primary ml-1"
                   target="_blank"
-                  href=${`https://goalseeker.purestake.io/algorand/${ledgerName}/application/${cap.id}`}
+                  href=${getTransactionExplorerURL('application', ledger, cap.id)}
                   data-tooltip="View on GoalSeeker"
                   aria-label="view address info on goal seeker"
                 >
-                  <i class="fas fa-external-link-alt has-text-link-dark px-1"></i>
+                  <i class="fas fa-external-link-alt has-text-link-light px-1"></i>
                 </a>
               </span>
             `

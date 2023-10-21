@@ -9,14 +9,28 @@ const TxAxfer: FunctionalComponent = (props: any) => {
   const { tx, account, contact, network, vo, dt, estFee, da, un, msig, authAddr } = props;
   const fee = estFee ? estFee : tx['fee'];
 
+  function getTransactionExplorerURL(network: string, type: string, id: number): string {
+  const base = {
+    'TestNet': 'https://testnet.algoexplorer.io',
+    'MainNet': 'https://algoexplorer.io',
+    'Voi Testnet': 'https://voi.observer/explorer'
+  }[network] || 'https://some-default-explorer.com';
+
+  switch (type) {
+    case 'asset':
+      return `${base}/asset/${id}`;
+    default:
+      return `${base}/unknown/${id}`;
+  }
+}
+
+
   let assetIndex = html`<p style="width: 70%">${tx.assetIndex}</p>`;
   if (isBaseSupportedNetwork(network)) {
     assetIndex = html`
       <a
         style="width: 70%"
-        href=${`https://goalseeker.purestake.io/algorand/${network.toLowerCase()}/asset/${
-          tx.assetIndex
-        }`}
+        href=${getTransactionExplorerURL(network, 'asset', tx.assetIndex)}
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -59,7 +73,7 @@ const TxAxfer: FunctionalComponent = (props: any) => {
       </div>
       <div class="is-flex">
         <p style="width: 30%;">${!estFee || tx['flatFee'] ? 'Fee:' : 'Estimated fee:'}</p>
-        <p style="width: 70%;">${fee / 1e6} Algos</p>
+        <p style="width: 70%;">${fee / 1e6} VOI</p>
       </div>
       <div class="is-flex">
         <p style="width: 30%;"><b>Amount:</b></p>

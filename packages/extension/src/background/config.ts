@@ -8,6 +8,16 @@ export class Settings {
   static backend: Backend = Backend.PureStake;
   static backend_settings: { [key: string]: any } = {
     [Backend.PureStake]: {
+     [Network.VoiTestNet]: {
+        [API.Algod]: {
+          url: 'https://testnet-api.voi.nodly.io',
+          port: '',
+        },
+        [API.Indexer]: {
+          url: 'https://testnet-idx.voi.nodly.io',
+          port: '',
+        },
+      },
       [Network.TestNet]: {
         [API.Algod]: {
           url: 'https://algosigner.api.purestake.io/testnet/algod',

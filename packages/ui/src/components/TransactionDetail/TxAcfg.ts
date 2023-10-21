@@ -4,6 +4,20 @@ import { FunctionalComponent } from 'preact';
 const TxAcfg: FunctionalComponent = (props: any) => {
   const { tx, ledger } = props;
 
+  function getTransactionExplorerURL() {
+    switch (ledger) {
+      case 'TestNet':
+        return 'https://testnet.algoexplorer.io/tx/';
+      case 'MainNet':
+        return 'https://algoexplorer.io/tx/';
+      case 'Voi Testnet':
+        return 'https://voi.observer/explorer/transaction/';
+      default:
+        return 'https://some-default-explorer.com/tx/';
+    }
+  }
+  
+
   return html`
     <div class="box" style="overflow-wrap: break-word;">
       <p id="txTitle" class="has-text-centered has-text-weight-bold">
@@ -38,16 +52,15 @@ const TxAcfg: FunctionalComponent = (props: any) => {
         <span>${tx['confirmed-round']}</span>
       </p>
       <div class="has-text-centered">
-        <a
-          href=${`https://goalseeker.purestake.io/algorand/${ledger.toLowerCase()}/transaction/${
-            tx.id
-          }`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          See details in GoalSeeker
-        </a>
-      </div>
+  <a
+    href=${getTransactionExplorerURL() + tx.id}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    See details in Explorer
+  </a>
+</div>
+
     </div>
   `;
 };

@@ -240,27 +240,28 @@ const ContactsPage: FunctionalComponent = () => {
         ${contacts.map(
           // Scrollable content
           (c) =>
-            html`<i
-                class="far fa-trash-alt px-1"
-                style="position: relative; z-index: 3; top: 8px; left: 92%; cursor: pointer;"
-                aria-label="delete contact"
-                onClick=${() => openDeleteModal(c.name, c.address)}
-              ></i>
-              <i
-                class="far fa-edit px-1"
-                style="position: relative; z-index: 3; top: 7px; left: 80%; cursor: pointer;"
-                aria-label="edit contact"
-                onClick=${() => openEditModal(c.name, c.address)}
-              ></i>
+          html`
+          <i
+              class="far fa-trash-alt px-1"
+              style="position: relative; z-index: 3; top: 8px; left: 92%; cursor: pointer; color: white !important;"
+              aria-label="delete contact"
+              onClick=${() => openDeleteModal(c.name, c.address)}
+          ></i>
+          <i
+              class="far fa-edit px-1"
+              style="position: relative; z-index: 3; top: 7px; left: 80%; cursor: pointer; color: white !important;"
+              aria-label="edit contact"
+              onClick=${() => openEditModal(c.name, c.address)}
+          ></i>
               <a
                 style="position: relative; z-index: 3; top: 7px; left: 66%; cursor: pointer; color: inherit;"
                 class="has-tooltip-arrow has-tooltip-left has-tooltip-fade has-tooltip-primary px-1"
                 target="_blank"
-                href=${`https://goalseeker.purestake.io/algorand/mainnet/account/${c.address}`}
-                data-tooltip="View on GoalSeeker"
-                aria-label="view address info on goal seeker"
+                href=${`https://voitest-explorer.k1-fi.a-wallet.net/explorer/account/${c.address}/transactions`}
+                data-tooltip="View on Explorer"
+                aria-label="view address info on Explorer"
               >
-                <i class="fas fa-external-link-alt px-1"></i>
+                <i class="fas fa-external-link-alt has-text-link-light px-1"></i>
               </a>
               <${ContactPreview}
                 contact="${c}"

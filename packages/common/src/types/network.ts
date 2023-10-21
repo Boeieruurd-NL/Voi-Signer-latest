@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 export enum Network {
+  VoiTestNet = 'Voi Testnet',
   TestNet = 'TestNet',
   MainNet = 'MainNet',
 }
@@ -69,6 +70,11 @@ export class NetworkTemplate {
 export function getBaseSupportedNetworks(): Array<NetworkTemplate> {
   // Need to add access to additional network types from import
   return [
+    new NetworkTemplate({
+      name: Network.VoiTestNet,
+      genesisID: 'voitest-v1',
+      genesisHash: 'IXnoWtviVVJW5LGivNFc0Dq14V3kqaXuK2u5OQrdVZo=',
+    }),
     new NetworkTemplate({
       name: Network.MainNet,
       genesisID: 'mainnet-v1.0',

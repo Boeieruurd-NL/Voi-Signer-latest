@@ -10,7 +10,7 @@ import { sendMessage } from 'services/Messaging';
 import { StoreContext } from 'services/StoreContext';
 
 import background from 'assets/background.png';
-import logo from 'assets/logo-inverted.svg';
+import logo from 'assets/logo-inverted.png';
 
 const Login: FunctionalComponent = (props: any) => {
   const { redirect } = props;
@@ -67,7 +67,7 @@ const Login: FunctionalComponent = (props: any) => {
       <div style="flex: 1">
         <section class="hero has-text-centered mb-6">
           <div class="hero-body">
-            <img src=${logo} width="120" class="mb-3" />
+            <img src=${logo} width="180" class="mb-3" />
           </div>
         </section>
 
@@ -84,7 +84,7 @@ const Login: FunctionalComponent = (props: any) => {
           />
 
           <p class="mt-5 has-text-centered is-size-7">
-            AlgoSigner does not store your password. If you’ve forgotten your password, you’ll need
+            VOI-Signer does not store your password. If you’ve forgotten your password, you’ll need
             to create a new wallet and re-link your accounts.
           </p>
           ${error.length > 0 &&

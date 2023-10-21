@@ -61,15 +61,14 @@ const SetPassword: FunctionalComponent = () => {
           <img src=${walletLock} width="150" />
         </section>
 
-        <section class="section pt-4 pb-0">
+        <section class="section pt-4 pb-0 has-text-centered">
           <p>
             You don’t need a username, this wallet is tied to this browser. If you forget your
-            password, your wallet will be lost. Make your password strong (at least 8 characters)
-            and easy to remember.
+            password, your wallet will be lost.
           </p>
-          <p class="mt-2">
-            We recommend using a sentence that is meaningful, for "example".
-            “my_1st_game_was_GALAGA!”
+          <p class="mt-2 has-text-centered">
+          Make your password strong (at least 8 characters)
+          and easy to remember.
           </p>
           <input
             class="input mt-4"
@@ -109,7 +108,7 @@ const SetPassword: FunctionalComponent = () => {
               ${zxcvbn(password).score < 3 &&
               html`<div style="order: 2;">${zxcvbn(password).feedback.suggestions.join('\n')}</div>`}
               ${zxcvbn(password).score > 2 &&
-              html`<div style="order: 2;"
+              html`<div style="order: 2 mt-2;"
                 >Complexity acceptable. Estimated guesses: ${zxcvbn(password).guesses}</div
               >`}
             </div>`}

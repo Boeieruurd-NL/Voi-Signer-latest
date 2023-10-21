@@ -37,6 +37,7 @@ const AccountPreview: FunctionalComponent = (props: any) => {
       class="box py-2 is-shadowless account-preview ${account.isRef ? 'pl-0' : 'pl-5'}"
       onClick=${() => route(`/${ledger}/${account.address}`)}
       id="account_${account.name.replace(/\s/g, '')}"
+      style="color: white;"
     >
       <div style="display: flex; justify-content: space-between;">
         ${account.isRef &&
@@ -49,8 +50,8 @@ const AccountPreview: FunctionalComponent = (props: any) => {
           <b>${account.name}</b>
         </div>
         <div class="is-size-7 has-text-right is-flex-grow-1">
-          ${results && results.assets && html`<b>${results.assets.length}</b> ASAs<br />`}
-          ${results && html`<b>${numFormat(results.amount / 1e6, 6)}</b> Algos`}
+          ${results && results.assets && html`<b>${results.assets.length}</b> VSAs<br />`}
+          ${results && html`<b>${numFormat(results.amount / 1e6, 6)}</b> VOI`}
           ${results === null && error && html`<span>${error}</span>`}
           ${results === null &&
           !error &&

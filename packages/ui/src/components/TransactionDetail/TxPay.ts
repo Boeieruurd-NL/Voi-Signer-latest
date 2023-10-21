@@ -8,6 +8,20 @@ const TxPay: FunctionalComponent = (props: any) => {
   // const closeamount = props.data.payment.closeamount || 0;
   // const closerewards = props.data.payment.closerewards || 0;
 
+  function getTransactionExplorerURL() {
+    switch (ledger) {
+      case 'TestNet':
+        return 'https://testnet.algoexplorer.io/tx/';
+      case 'MainNet':
+        return 'https://algoexplorer.io/tx/';
+      case 'Voi Testnet':
+        return 'https://voi.observer/explorer/transaction/';
+      default:
+        return 'https://some-default-explorer.com/tx/';
+    }
+  }
+  
+
   return html`
     <div class="box" style="overflow-wrap: break-word;">
       <p id="txTitle" class="has-text-centered has-text-weight-bold">
@@ -27,23 +41,21 @@ const TxPay: FunctionalComponent = (props: any) => {
       </p>
       <p>
         <strong>Amount: </strong>
-        <span>${tx['payment-transaction']['amount'] / 1e6} Algos</span>
+        <span>${tx['payment-transaction']['amount'] / 1e6} VOI</span>
       </p>
       <p>
         <strong>Block: </strong>
         <span>${tx['confirmed-round']}</span>
       </p>
       <div class="has-text-centered">
-        <a
-          href=${`https://goalseeker.purestake.io/algorand/${ledger.toLowerCase()}/transaction/${
-            tx.id
-          }`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          See details in GoalSeeker
-        </a>
-      </div>
+      <a
+        href=${getTransactionExplorerURL() + tx.id}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        See details in Explorer
+      </a>
+    </div>    
     </div>
   `;
 };

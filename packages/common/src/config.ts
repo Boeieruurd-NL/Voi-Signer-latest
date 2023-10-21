@@ -39,6 +39,9 @@ export class AliasConfig {
       [Network.MainNet]:
         'https://api.nf.domains/nfd?prefix=${term}&requireAddresses=true' +
         `&limit=${MAX_ALIASES_PER_NAMESPACE}`,
+        [Network.VoiTestNet]:
+        'https://api.nf.domains/nfd?prefix=${term}&requireAddresses=true' +
+        `&limit=${MAX_ALIASES_PER_NAMESPACE}`,
     },
     findAliasedAddresses: (response): Array<Alias> =>
       response.map((o) => ({
@@ -49,26 +52,6 @@ export class AliasConfig {
     apiTimeout: 2000,
   };
 
-  static [Namespace.ANS]: ConfigTemplate = {
-    name: 'Algorand Name Service',
-    networks: {
-      [Network.TestNet]:
-        'https://testnet.api.algonameservice.com/names?pattern=${term}' +
-        `&limit=${MAX_ALIASES_PER_NAMESPACE}`,
-      [Network.MainNet]:
-        'https://api.algonameservice.com/names?pattern=${term}' +
-        `&limit=${MAX_ALIASES_PER_NAMESPACE}`,
-    },
-    findAliasedAddresses: (response): Array<Alias> =>
-      response
-        .sort((a1, a2) => a1.name.localeCompare(a2.name))
-        .map((o) => ({
-          name: o['name'],
-          address: o['address'],
-          namespace: Namespace.ANS,
-        })),
-    apiTimeout: 2000,
-  };
 
   public static getMatchingNamespaces(network: string): Array<Namespace> {
     const matchingNamespaces: Array<Namespace> = [];

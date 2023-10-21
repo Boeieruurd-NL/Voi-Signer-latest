@@ -49,7 +49,6 @@ export enum Namespace {
   AlgoSigner_Contacts = 'AlgoSigner_Contacts',
   AlgoSigner_Accounts = 'AlgoSigner_Accounts',
   NFD = 'NFD',
-  ANS = 'ANS',
 }
 
 export type NamespaceConfig = {

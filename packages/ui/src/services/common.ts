@@ -1,6 +1,6 @@
 import { Namespace } from '@algosigner/common/types';
 import algosigner from 'assets/logo.svg';
-import algosignerInverted from 'assets/logo-inverted.svg';
+import algosignerInverted from 'assets/logo-inverted.png';
 import contacts from 'assets/contacts.svg';
 import contactsInverted from 'assets/contacts-inverted.svg';
 import nfd from 'assets/nfd.png';
@@ -41,7 +41,6 @@ export function getNamespaceIcon(namespace: Namespace, active: boolean) {
     [Namespace.AlgoSigner_Contacts]: [contacts, contactsInverted],
     [Namespace.AlgoSigner_Accounts]: [algosigner, algosignerInverted],
     [Namespace.NFD]: [nfd, nfd],
-    [Namespace.ANS]: [ans, ans],
   };
   return icons[namespace][active ? 1 : 0];
 }

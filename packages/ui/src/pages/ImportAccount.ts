@@ -192,8 +192,7 @@ const ImportAccount: FunctionalComponent = (props: any) => {
         ${!isRef &&
         html`
           <div class="mb-3">
-            <p>Insert the 25 word mnemonic of the account</p>
-            <p>(Entire mnemonic may be pasted into a single field):</p>
+            <p>Insert or paste in the 25 word mnemonic of the account</p>
           </div>
           <div class="pr-2" id="mnemonicBlock">
             ${[...mnemonicArray].map(

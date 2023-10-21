@@ -324,7 +324,7 @@ const SignWalletTransaction: FunctionalComponent = () => {
             html`<img class="mr-2" src=${request.favIconUrl} width="32" style="float:left" />`}
             <h1 class="title is-size-5">
               <span>${request.originTitle} wants to sign transactions for </span>
-              <span style="color:${network.toLowerCase() == 'mainnet' ? '#f16522' : '#222b60'};">
+              <span style="color:${network.toLowerCase() == 'Voi Testnet' ? '#f16522' : '#222b60'};">
                 ${network}
               </span>
             </h1>

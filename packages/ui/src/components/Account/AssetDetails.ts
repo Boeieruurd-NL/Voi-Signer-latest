@@ -27,6 +27,20 @@ const AssetDetails: FunctionalComponent = (props: any) => {
     }
   };
 
+  function getAssetExplorerURL(type) {
+    switch (ledger) {
+      case 'TestNet':
+        return type === 'asset' ? 'https://testnet.algoexplorer.io/asset/' : 'https://testnet.algoexplorer.io/tx/';
+      case 'MainNet':
+        return type === 'asset' ? 'https://algoexplorer.io/asset/' : 'https://algoexplorer.io/tx/';
+      case 'Voi Testnet':
+        return type === 'asset' ? 'https://voi.observer/explorer/asset/' : 'https://voi.observer/explorer/transaction/';
+      default:
+        return 'https://some-default-explorer.com/';
+    }
+  }
+  
+
   const toDecimal = (num, full = false) => {
     const params: any = {
       maximumFractionDigits: asset.decimals,
@@ -75,17 +89,16 @@ const AssetDetails: FunctionalComponent = (props: any) => {
           </span>
         </p>
         <div class="has-text-centered is-flex is-flex-direction-column mt-3">
-          <a
-            href=${`https://goalseeker.purestake.io/algorand/${ledger.toLowerCase()}/asset/${
-              asset['asset-id']
-            }`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            See details in GoalSeeker
-          </a>
-          ${!(asset.amount > 0) && html`<a id="assetOptOut" onClick=${optOutFn}>Opt-out of this asset</a>`}
-        </div>
+        <a
+          href=${getAssetExplorerURL('asset') + asset['asset-id']}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          See details in Explorer
+        </a>
+        ${!(asset.amount > 0) && html`<a id="assetOptOut" onClick=${optOutFn}>Opt-out of this asset</a>`}
+      </div>
+      
       `}
     </div>
   `;

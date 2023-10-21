@@ -153,7 +153,7 @@ const TransactionsList: FunctionalComponent = (props: any) => {
 
     switch (tx['tx-type']) {
       case 'pay':
-        info = tx['payment-transaction'].amount / 1e6 + ' Algos';
+        info = tx['payment-transaction'].amount / 1e6 + ' VOI';
         if (tx.sender === address) {
           subtitle = 'Payment To';
           title = tx['payment-transaction'].receiver;
@@ -185,18 +185,18 @@ const TransactionsList: FunctionalComponent = (props: any) => {
         // Clawback if there is a sender in the transfer object
         if (tx['asset-transfer-transaction'].sender) {
           if (tx['asset-transfer-transaction'].receiver === address) {
-            subtitle = 'ASA From (clawback)';
+            subtitle = 'VSA From (clawback)';
             title = tx['asset-transfer-transaction']['sender'];
           } else {
-            subtitle = 'ASA To (clawback)';
+            subtitle = 'VSA To (clawback)';
             title = tx['asset-transfer-transaction']['receiver'];
           }
         } else {
           if (tx['asset-transfer-transaction'].receiver === address) {
-            subtitle = 'ASA From';
+            subtitle = 'VSA From';
             title = tx['sender'];
           } else {
-            subtitle = 'ASA To';
+            subtitle = 'VSA To';
             title = tx['asset-transfer-transaction']['receiver'];
           }
         }
@@ -269,7 +269,7 @@ const TransactionsList: FunctionalComponent = (props: any) => {
     let title, subtitle, info;
     switch (tx['type']) {
       case 'pay':
-        info = tx.amount / 1e6 + ' Algos';
+        info = tx.amount / 1e6 + ' VOI';
         if (tx.sender === address) {
           subtitle = 'Pending Payment to';
           title = tx.receiver;

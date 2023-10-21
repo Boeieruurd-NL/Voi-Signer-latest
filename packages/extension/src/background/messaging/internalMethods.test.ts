@@ -95,6 +95,16 @@ describe('wallet flow', () => {
 
     expect(sendResponse).toHaveBeenCalledWith({
       availableNetworks: [
+{
+          algodUrl: undefined,
+          genesisHash: 'IXnoWtviVVJW5LGivNFc0Dq14V3kqaXuK2u5OQrdVZo=',
+          genesisID: 'voitest-v1',
+          headers: undefined,
+          indexerUrl: undefined,
+          isEditable: false,
+          name: 'VoiTestNet',
+          symbol: undefined,
+        },
         {
           algodUrl: undefined,
           genesisHash: 'wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8=',
@@ -118,6 +128,7 @@ describe('wallet flow', () => {
       ],
       network: Network.MainNet,
       wallet: {
+VoiTestNet: [],
         TestNet: [],
         MainNet: [],
       },
@@ -139,6 +150,16 @@ describe('wallet flow', () => {
 
     const sessionObject = {
       availableNetworks: [
+{
+          algodUrl: undefined,
+          genesisHash: 'IXnoWtviVVJW5LGivNFc0Dq14V3kqaXuK2u5OQrdVZo=',
+          genesisID: 'voitest-v1',
+          headers: undefined,
+          indexerUrl: undefined,
+          isEditable: false,
+          name: 'VoiTestNet',
+          symbol: undefined,
+        },
         {
           algodUrl: undefined,
           genesisHash: 'wGHE2Pwdvd7S12BL5FaOP20EGYesN73ktiC1qzkkit8=',
@@ -220,6 +241,7 @@ describe('wallet flow', () => {
     InternalMethods[method](request, sendResponse);
 
     const wallet = {
+VoiTestNet: [],
       TestNet: [account],
       MainNet: [],
     };
@@ -251,6 +273,7 @@ describe('wallet flow', () => {
         lock: (wallet, cb) => cb(true),
         unlock: (cb) =>
           cb({
+VoiTestNet: [],
             TestNet: [],
             MainNet: [],
           }),
@@ -268,6 +291,7 @@ describe('wallet flow', () => {
         },
       ],
       MainNet: [],
+VoiTestNet: [],
     };
 
     expect(sendResponse).toHaveBeenCalledWith(wallet);
@@ -302,6 +326,7 @@ describe('wallet flow', () => {
               },
             ],
             MainNet: [],
+VoiTestNet: [],
           }),
         checkStorage: (cb) => cb(true),
       };
@@ -310,6 +335,7 @@ describe('wallet flow', () => {
     InternalMethods[method](request, sendResponse);
 
     const wallet = {
+VoiTestNet: [],
       TestNet: [],
       MainNet: [],
     };

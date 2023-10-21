@@ -176,7 +176,7 @@ export class InternalMethods {
     };
     extensionStorage.setStorage(
       'aliases',
-      { [Network.MainNet]: emptyAliases, [Network.MainNet]: emptyAliases },
+      { [Network.VoiTestNet]: emptyAliases, [Network.MainNet]: emptyAliases, [Network.TestNet]: emptyAliases },
       null
     );
     const namespaceConfigs: Array<NamespaceConfig> = [];
@@ -195,6 +195,7 @@ export class InternalMethods {
 
     this._encryptionWrap = new encryptionWrap(request.body.params.passphrase);
     const newWallet = {
+      [Network.VoiTestNet]: [],
       [Network.MainNet]: [],
       [Network.TestNet]: [],
     };
@@ -202,7 +203,7 @@ export class InternalMethods {
       if (isSuccessful) {
         session.availableNetworks = getBaseSupportedNetworks();
         session.wallet = this.safeWallet(newWallet); 
-        session.network = Network.MainNet;
+        session.network = Network.VoiTestNet;
         sendResponse(session.asObject());
       } else {
         sendResponse({ error: 'Lock failed' });
@@ -278,7 +279,7 @@ export class InternalMethods {
 
             // Setup session
             session.wallet = wallet;
-            session.network = Network.MainNet;
+            session.network = Network.VoiTestNet;
             session.availableNetworks = updatedNetworks;
 
             // Load internal aliases && namespace configurations

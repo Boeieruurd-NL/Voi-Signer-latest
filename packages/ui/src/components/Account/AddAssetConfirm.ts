@@ -5,7 +5,6 @@ import { route } from 'preact-router';
 import { JsonRpcMethod } from '@algosigner/common/messaging/types';
 
 import { sendMessage } from 'services/Messaging';
-
 import Authenticate from 'components/Authenticate';
 
 const AddAssetConfirm: FunctionalComponent = (props: any) => {
@@ -17,6 +16,22 @@ const AddAssetConfirm: FunctionalComponent = (props: any) => {
   const [txId, setTxId] = useState('');
 
   const disabled = accountsAssetsIDs.includes(asset['asset_id']);
+
+  function getAssetExplorerURL(type) {
+    switch (ledger) {
+      case 'TestNet':
+        return type === 'asset' ? 'https://testnet.algoexplorer.io/asset/' : 'https://testnet.algoexplorer.io/tx/';
+      case 'MainNet':
+        return type === 'asset' ? 'https://algoexplorer.io/asset/' : 'https://algoexplorer.io/tx/';
+      case 'Voi Testnet':
+        return type === 'asset' ? 'https://voi.observer/explorer/asset/' : 'https://voi.observer/explorer/transaction/';
+      default:
+        // Handle the unexpected ledger value
+        // e.g., redirect to a generic explorer, show an error message, etc.
+        return 'https://some-default-explorer.com/'; // replace with your desired URL or action
+    }
+  }
+  
 
   const addAsset = (pwd: string) => {
     const params = {
@@ -84,13 +99,11 @@ const AddAssetConfirm: FunctionalComponent = (props: any) => {
 
         <div class="has-text-centered mt-3">
           <a
-            href=${`https://goalseeker.purestake.io/algorand/${ledger.toLowerCase()}/asset/${
-              asset['asset_id']
-            }`}
+            href=${`${getAssetExplorerURL('asset')}${asset['asset_id']}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            See asset details in GoalSeeker
+            See asset details in Explorer
           </a>
         </div>
 
@@ -114,11 +127,11 @@ const AddAssetConfirm: FunctionalComponent = (props: any) => {
         <b>Transaction sent!</b>
         <div class="mt-3">
           <a
-            href=${`https://goalseeker.purestake.io/algorand/${ledger.toLowerCase()}/transaction/${txId}`}
+            href=${`${getAssetExplorerURL('transaction')}${txId}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            See transaction details in GoalSeeker
+            See transaction details in Explorer
           </a>
         </div>
         <button
@@ -146,3 +159,4 @@ const AddAssetConfirm: FunctionalComponent = (props: any) => {
 };
 
 export default AddAssetConfirm;
+

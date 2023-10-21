@@ -11,11 +11,13 @@ const TIMEOUT = 500;
 ///
 export default class AssetsDetailsHelper {
   private static assetsToAdd: { [key: string]: Array<number> } = {
+[Network.VoiTestNet]: [],
     [Network.TestNet]: [],
     [Network.MainNet]: [],
   };
 
   private static timeouts = {
+[Network.VoiTestNet]: [],
     [Network.TestNet]: null,
     [Network.MainNet]: null,
   };

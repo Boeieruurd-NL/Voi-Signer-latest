@@ -2,7 +2,7 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useState, useRef, useEffect } from 'preact/hooks';
 
-import logo from 'assets/logo-inverted.svg';
+import logo from 'assets/logo-inverted.png';
 
 const Authenticate: FunctionalComponent = (props: any) => {
   const { nextStep, error, loading } = props;
@@ -27,7 +27,7 @@ const Authenticate: FunctionalComponent = (props: any) => {
     <div class="section has-text-white has-text-centered py-0">
       <img src=${logo} width="120" class="mb-6" />
 
-      <p> AlgoSigner needs your password to continue </p>
+      <p> VOI-Signer needs your password to continue </p>
       <input
         class="input my-5"
         id="enterPassword"

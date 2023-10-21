@@ -21,10 +21,10 @@ const Account: FunctionalComponent = (props: any) => {
 
   const rewardsTooltip =
     details &&
-    `Algos: ${numFormat(
+    `VOI: ${numFormat(
       details['amount-without-pending-rewards'] / 1e6,
       6
-    )}\nRewards: ${numFormat(details['pending-rewards'] / 1e6, 6)}`;
+    )}`;
 
   useEffect(() => {
     for (let i = store.wallet[ledger].length - 1; i >= 0; i--) {
@@ -77,7 +77,7 @@ const Account: FunctionalComponent = (props: any) => {
           details &&
           html`
             <span>${numFormat(details.amount / 1e6, 6)} </span>
-            <span class="has-text-grey-light">Algos</span>
+            <span class="has-text-grey-light">VOI</span>
             <i
               class="far fa-question-circle px-1 has-tooltip-arrow has-tooltip-right has-tooltip-fade"
               data-tooltip="${rewardsTooltip}"
