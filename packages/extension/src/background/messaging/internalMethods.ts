@@ -922,7 +922,7 @@ export class InternalMethods {
         ...txnParams,
         fee: params.fee,
         firstRound: params['last-round'],
-        lastRound: params['last-round'] + 100,
+        lastRound: params['last-round'] + 1000,
         genesisID: params['genesis-id'],
         genesisHash: params['genesis-hash'],
         amount: BigInt(txnParams.amount),
