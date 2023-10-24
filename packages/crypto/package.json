@@ -1,12 +1,9 @@
 {
-  "name": "algosigner-crypto",
-  "version": "1.11.0",
-  "author": "https://developer.purestake.io",
-  "description": "Cryptographic wrapper for saving and retrieving extention information in AlgoSigner.",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/PureStake/algosigner/packages/crypto.git"
-  },
+  "name": "voi-signer-crypto",
+  "version": "1.0.0",
+  "author": "Edited by Boeieruurd - OG Code by Purestake",
+  "description": "Cryptographic wrapper for saving and retrieving extention information in Voi-Signer.",
+
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^27.0.0",

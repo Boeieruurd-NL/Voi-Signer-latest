@@ -1,8 +1,6 @@
 {
-  "name": "algorand-test-project",
-  "version": "1.11.0",
-  "repository": "https://github.com/PureStake/algosigner",
-  "license": "MIT",
+  "name": "voi-test-project",
+  "version": "1.0.0",
   "description": "Repository for tests",
   "devDependencies": {
     "algosdk": "2.0.0",

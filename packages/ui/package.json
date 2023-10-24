@@ -1,10 +1,9 @@
 {
-  "name": "algosigner-ui",
-  "version": "1.11.0",
-  "author": "https://developer.purestake.io",
-  "repository": "https://github.com/PureStake/algosigner",
+  "name": "voi-signer-ui",
+  "version": "1.0.0",
+  "author": "Edited by Boeieruurd - OG Code by Purestake",
   "license": "MIT",
-  "description": "User interface built for AlgoSigner.",
+  "description": "User interface built for Voi-Signer.",
   "private": true,
   "scripts": {
     "start": "webpack-dev-server",

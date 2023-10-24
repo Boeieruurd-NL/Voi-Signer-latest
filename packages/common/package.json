@@ -1,9 +1,8 @@
 {
-  "name": "@algosigner/common",
-  "version": "1.11.0",
-  "author": "https://developer.purestake.io",
-  "description": "Common library functions for AlgoSigner.",
-  "repository": "https://github.com/PureStake/algosigner",
+  "name": "@voisigner/common",
+  "version": "1.0.0",
+  "author": "Edited by Boeieruurd - OG Code by Purestake",
+  "description": "Common library functions for Voi-Signer.",
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^27.0.0",

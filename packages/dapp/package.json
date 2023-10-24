@@ -1,10 +1,9 @@
 {
-  "name": "@algosigner/dapp",
-  "version": "1.11.0",
-  "author": "https://developer.purestake.io",
-  "repository": "https://github.com/PureStake/algosigner",
+  "name": "@voisigner/dapp",
+  "version": "1.0.0",
+  "author": "Edited by Boeieruurd - OG Code by Purestake",
   "license": "MIT",
-  "description": "Sample DAPP for use with AlgoSigner.",
+  "description": "Sample DAPP for use with Voi-Signer.",
   "scripts": {
     "build": "npm run clean && webpack",
     "clean": "rm -rf ./dist/",
