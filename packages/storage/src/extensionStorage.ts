@@ -4,8 +4,8 @@
  * =========================================
  */
 
-import { extensionBrowser } from '@algosigner/common/chrome';
-import { logging } from '@algosigner/common/logging';
+import { extensionBrowser } from '@voisigner/common/chrome';
+import { logging } from '@voisigner/common/logging';
 
 ///
 // Handles the setting and retrieval of data into the browser storage.local location.

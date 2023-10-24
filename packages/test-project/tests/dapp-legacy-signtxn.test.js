@@ -1,5 +1,5 @@
 /**
- * dapp e2e tests for the AlgoSigner V2 Signing functionality
+ * dapp e2e tests for the voisigner V2 Signing functionality
  *
  * @group dapp/legacy/signtxn
  */
@@ -9,12 +9,12 @@ const {
   openExtension,
   getPopup,
   getLedgerSuggestedParams,
-  signDappTxnsWAlgoSigner,
+  signDappTxnsWvoisigner,
   decodeBase64Blob,
   buildSdkTx,
   prepareWalletTx,
 } = require('./common/helpers');
-const { CreateWallet, ConnectWithAlgoSignerObject, ImportAccount } = require('./common/tests');
+const { CreateWallet, ConnectWithvoisignerObject, ImportAccount } = require('./common/tests');
 
 const msigAccount = accounts.multisig;
 const account1 = msigAccount.subaccounts[0];
@@ -30,7 +30,7 @@ describe('Wallet Setup', () => {
   });
 
   CreateWallet();
-  ConnectWithAlgoSignerObject();
+  ConnectWithvoisignerObject();
 
   test('Get TestNet params', async () => {
     ledgerParams = await getLedgerSuggestedParams();
@@ -73,7 +73,7 @@ describe('Txn Signing Validation errors', () => {
 
     await expect(
       dappPage.evaluate(async (transactions) => {
-        const signPromise = AlgoSigner.signTxn(transactions);
+        const signPromise = voisigner.signTxn(transactions);
         await window.rejectSign();
         return Promise.resolve(signPromise)
           .then((data) => {
@@ -89,7 +89,7 @@ describe('Txn Signing Validation errors', () => {
     });
   });
 
-  test('Error on Sender not imported to AlgoSigner', async () => {
+  test('Error on Sender not imported to voisigner', async () => {
     const invalidAccount = accounts.ui.address;
     const txn = prepareWalletTx(
       buildSdkTx({
@@ -104,7 +104,7 @@ describe('Txn Signing Validation errors', () => {
     unsignedTransactions = [txn];
 
     const signResponse = await dappPage.evaluate((transactions) => {
-      return Promise.resolve(AlgoSigner.signTxn(transactions))
+      return Promise.resolve(voisigner.signTxn(transactions))
         .then((data) => {
           return data;
         })
@@ -115,7 +115,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4100,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -140,7 +140,7 @@ describe('Txn Signing Validation errors', () => {
 
     await expect(
       dappPage.evaluate((transactions) => {
-        return Promise.resolve(AlgoSigner.signTxn(transactions))
+        return Promise.resolve(voisigner.signTxn(transactions))
           .then((data) => {
             return data;
           })
@@ -151,7 +151,7 @@ describe('Txn Signing Validation errors', () => {
     ).resolves.toMatchObject({
       message: expect.stringContaining('There are no transactions to sign'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
     });
   });
 
@@ -170,7 +170,7 @@ describe('Txn Signing Validation errors', () => {
     unsignedTransactions = [txn];
 
     const signResponse = await dappPage.evaluate((transactions) => {
-      return Promise.resolve(AlgoSigner.signTxn(transactions))
+      return Promise.resolve(voisigner.signTxn(transactions))
         .then((data) => {
           return data;
         })
@@ -181,7 +181,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -204,7 +204,7 @@ describe('Txn Signing Validation errors', () => {
     unsignedTransactions = [txn];
 
     const signResponse = await dappPage.evaluate((transactions) => {
-      return Promise.resolve(AlgoSigner.signTxn(transactions))
+      return Promise.resolve(voisigner.signTxn(transactions))
         .then((data) => {
           return data;
         })
@@ -215,7 +215,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -238,7 +238,7 @@ describe('Txn Signing Validation errors', () => {
     unsignedTransactions = [txn];
 
     const signResponse = await dappPage.evaluate((transactions) => {
-      return Promise.resolve(AlgoSigner.signTxn(transactions))
+      return Promise.resolve(voisigner.signTxn(transactions))
         .then((data) => {
           return data;
         })
@@ -249,7 +249,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -273,7 +273,7 @@ describe('Txn Signing Validation errors', () => {
     unsignedTransactions = [txn];
 
     const signResponse = await dappPage.evaluate((transactions) => {
-      return Promise.resolve(AlgoSigner.signTxn(transactions))
+      return Promise.resolve(voisigner.signTxn(transactions))
         .then((data) => {
           return data;
         })
@@ -284,7 +284,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -292,14 +292,14 @@ describe('Txn Signing Validation errors', () => {
   });
 
   // Msig validations
-  test('Error on Msig Signer not imported to AlgoSigner', async () => {
+  test('Error on Msig Signer not imported to voisigner', async () => {
     const invalidAccount = msigAccount.subaccounts[2].address;
     const txn = { ...msigTxn };
     txn.signers = [account1.address, invalidAccount];
     unsignedTransactions = [txn];
 
     const signResponse = await dappPage.evaluate((transactions) => {
-      return Promise.resolve(AlgoSigner.signTxn(transactions))
+      return Promise.resolve(voisigner.signTxn(transactions))
         .then((data) => {
           return data;
         })
@@ -310,7 +310,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -324,7 +324,7 @@ describe('Txn Signing Validation errors', () => {
 describe('Multisig Transaction Use cases', () => {
   test('Sign MultiSig Transaction with All Accounts', async () => {
     unsignedTransactions = [msigTxn];
-    const signedTransactions = await signDappTxnsWAlgoSigner(unsignedTransactions, async () => {
+    const signedTransactions = await signDappTxnsWvoisigner(unsignedTransactions, async () => {
       const popup = await getPopup();
       const tooltipText = await popup.evaluate(() => {
         return getComputedStyle(
@@ -348,7 +348,7 @@ describe('Multisig Transaction Use cases', () => {
 
   test('Sign MultiSig Transaction with Specific Signer', async () => {
     unsignedTransactions[0].signers = [account1.address];
-    const signedTransactions = await signDappTxnsWAlgoSigner(unsignedTransactions);
+    const signedTransactions = await signDappTxnsWvoisigner(unsignedTransactions);
 
     // Verify correct signature is added
     const decodedTransaction = decodeBase64Blob(signedTransactions[0].blob);

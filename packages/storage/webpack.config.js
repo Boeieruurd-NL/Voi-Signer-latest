@@ -17,7 +17,7 @@ module.exports = {
   resolve: {
     alias: {
       '@storage': srcPath('~/'),
-      '@algosigner/common': srcPath('../common/src'),
+      '@voisigner/common': srcPath('../common/src'),
     },
     extensions: ['.ts', '.tsx', '.js'],
   },

@@ -2,11 +2,11 @@ import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
 import { useState, useEffect } from 'preact/hooks';
 import { route } from 'preact-router';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 
 import { sendMessage } from 'services/Messaging';
 import { numFormat } from 'services/common';
-import { REFERENCE_ACCOUNT_TOOLTIP } from '@algosigner/common/strings';
+import { REFERENCE_ACCOUNT_TOOLTIP } from '@voisigner/common/strings';
 
 const AccountPreview: FunctionalComponent = (props: any) => {
   const { account, ledger } = props;

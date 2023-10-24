@@ -3,9 +3,9 @@ import transport from './ledgerTransport';
 const algosdk = require('algosdk');
 const Algorand = require('@ledgerhq/hw-app-algorand');
 import LedgerActionResponse from './ledgerActionsResponse';
-import { WalletTransaction } from '@algosigner/common/types';
-import { base64ToByteArray } from '@algosigner/common/encoding';
-import { removeEmptyFields } from '@algosigner/common/utils';
+import { WalletTransaction } from '@voisigner/common/types';
+import { base64ToByteArray } from '@voisigner/common/encoding';
+import { removeEmptyFields } from '@voisigner/common/utils';
 import { EncodedSignedTransaction, Transaction } from 'algosdk';
 
 let ledgerTransport: typeof Algorand;

@@ -28,7 +28,7 @@
   "web_accessible_resources": 
   [
     { 
-      "resources": ["AlgoSigner.min.js"],
+      "resources": ["VoiSigner.min.js"],
       "matches": ["<all_urls>"]
     }
   ],

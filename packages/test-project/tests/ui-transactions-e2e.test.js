@@ -1,5 +1,5 @@
 /**
- * Basic e2e tests for the AlgoSigner UI
+ * Basic e2e tests for the voisigner UI
  *
  * @group ui/transactions
  */

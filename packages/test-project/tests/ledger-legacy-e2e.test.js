@@ -20,7 +20,7 @@ const {
 const {
   CreateWallet,
   VerifyAccount,
-  ConnectWithAlgoSignerObject,
+  ConnectWithvoisignerObject,
 } = require('./common/tests');
 
 jest.setTimeout(20000);
@@ -34,7 +34,7 @@ let ledgerParams;
 
 async function signDappTxn(transactionsToSign) {
   return await dappPage.evaluate(async (transactionsToSign) => {
-    const signPromise = AlgoSigner.signTxn(transactionsToSign)
+    const signPromise = voisigner.signTxn(transactionsToSign)
       .then((data) => {
         return data;
       })
@@ -52,14 +52,14 @@ describe('Wallet Setup', () => {
   });
 
   CreateWallet();
-  ConnectWithAlgoSignerObject();
+  ConnectWithvoisignerObject();
 
   test('Get TestNet params', async () => {
     ledgerParams = await getLedgerSuggestedParams();
   });
 });
 
-// Create a new account in AlgoSigner
+// Create a new account in voisigner
 describe('Link Ledger Account', () => {
   test('Link An Account, Step 1 - Begin Linking Process', async () => {
     await extensionPage.waitForSelector('#addAccount');
@@ -101,7 +101,7 @@ describe('dApp functionalities', () => {
   let txPromise;
   let signedBlob;
 
-  test('Create Asset Opt-in tx and send it to AlgoSigner', async () => {
+  test('Create Asset Opt-in tx and send it to voisigner', async () => {
     await extensionPage.waitForSelector('#addAccount');
 
     const optinTx = prepareWalletTx(

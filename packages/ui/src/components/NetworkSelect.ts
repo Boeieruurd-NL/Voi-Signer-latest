@@ -3,7 +3,7 @@ import { html } from 'htm/preact';
 import { useState, useContext } from 'preact/hooks';
 import { useObserver } from 'mobx-react-lite';
 import { route } from 'preact-router';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 import { StoreContext } from 'services/StoreContext';
 import { sendMessage } from 'services/Messaging';
 

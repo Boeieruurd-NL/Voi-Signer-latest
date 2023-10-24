@@ -1,4 +1,4 @@
-import { Blob } from  "@algosigner/crypto/src/secureStorageContext";
+import { Blob } from  "@voisigner/crypto/src/secureStorageContext";
 
 ///
 // Methods for helping modify data into and out of encrypted states.

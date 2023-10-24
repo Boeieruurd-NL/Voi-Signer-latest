@@ -10,12 +10,12 @@ module.exports = {
   entry: './src/index',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'AlgoSigner.min.js',
+    filename: 'VoiSigner.min.js',
     libraryTarget: 'umd',
   },
   resolve: {
     alias: {
-      '@algosigner/common': srcPath('../common/src'),
+      '@voisigner/common': srcPath('../common/src'),
     },
     extensions: ['.ts', '.tsx', '.js', '.json'],
   },

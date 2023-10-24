@@ -1,13 +1,13 @@
 import algosdk, { MultisigMetadata, Transaction } from 'algosdk';
 
-import { extensionBrowser } from '@algosigner/common/chrome';
-import { base64ToByteArray, byteArrayToBase64 } from '@algosigner/common/encoding';
-import { RequestError } from '@algosigner/common/errors';
-import { logging, LogLevel } from '@algosigner/common/logging';
-import { OptsKeys, WalletTransaction } from '@algosigner/common/types';
-import { Connection, Network, NetworkSelectionType, NetworkTemplate } from '@algosigner/common/types/network';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
-import { areBuffersEqual } from '@algosigner/common/utils';
+import { extensionBrowser } from '@voisigner/common/chrome';
+import { base64ToByteArray, byteArrayToBase64 } from '@voisigner/common/encoding';
+import { RequestError } from '@voisigner/common/errors';
+import { logging, LogLevel } from '@voisigner/common/logging';
+import { OptsKeys, WalletTransaction } from '@voisigner/common/types';
+import { Connection, Network, NetworkSelectionType, NetworkTemplate } from '@voisigner/common/types/network';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
+import { areBuffersEqual } from '@voisigner/common/utils';
 
 import {
   getValidatedTxnWrap,
@@ -70,7 +70,7 @@ export class Task {
     return true;
   }
 
-  // Checks for the originId authorization in details then call to make sure the account exists in Algosigner.
+  // Checks for the originId authorization in details then call to make sure the account exists in voisigner.
   private static checkAccountIsImportedAndAuthorized(
     network: string,
     genesisID: string,
@@ -376,7 +376,7 @@ export class Task {
               if (signedTxn) {
                 throw RequestError.SignedTxnWithSigners;
               }
-              // Then, we check all signers are valid accounts existing in AlgoSigner
+              // Then, we check all signers are valid accounts existing in voisigner
               signers.forEach((address) => {
                 if (!algosdk.isValidAddress(address)) {
                   throw RequestError.InvalidSignerAddress(address);

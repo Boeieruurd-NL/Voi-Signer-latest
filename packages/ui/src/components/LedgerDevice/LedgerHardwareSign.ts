@@ -2,9 +2,9 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useContext, useEffect, useState } from 'preact/hooks';
 
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
-import { getBaseSupportedNetworks } from '@algosigner/common/types/network';
-import { logging, LogLevel } from '@algosigner/common/logging';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
+import { getBaseSupportedNetworks } from '@voisigner/common/types/network';
+import { logging, LogLevel } from '@voisigner/common/logging';
 import TxAcfg from 'components/SignTransaction/TxAcfg';
 import TxPay from 'components/SignTransaction/TxPay';
 import TxKeyreg from 'components/SignTransaction/TxKeyreg';
@@ -74,8 +74,8 @@ const LedgerHardwareSign: FunctionalComponent = () => {
         }
       });
     } catch (ex) {
-      setError('Error retrieving transaction from AlgoSigner.');
-      logging.log('Error retrieving transaction from AlgoSigner:', LogLevel.Debug);
+      setError('Error retrieving transaction from voisigner.');
+      logging.log('Error retrieving transaction from voisigner:', LogLevel.Debug);
       logging.log(ex, LogLevel.Debug);
     }
   }, []);
@@ -164,7 +164,7 @@ const LedgerHardwareSign: FunctionalComponent = () => {
               <pre style="white-space: break-spaces;" class="mt-2">
               <code id="txResponseDetail" style="word-break: break-all;">${txResponseDetail}</code>
             </pre>
-              <p class="my-3">You may now close this site and relaunch AlgoSigner.</p>
+              <p class="my-3">You may now close this site and relaunch voisigner.</p>
             </div>
           `
         }

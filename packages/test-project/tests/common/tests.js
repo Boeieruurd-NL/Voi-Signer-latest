@@ -227,7 +227,7 @@ function ConnectWithAlgorandObject(accounts) {
   });
 }
 
-function ConnectWithAlgoSignerObject() {
+function ConnectWithVoiSignerObject() {
   test('Expose Authorize Functions', async () => {
     async function authorizeDapp() {
       const popup = await getPopup();
@@ -305,7 +305,7 @@ function ConnectWithAlgoSignerObject() {
   test('SiteNotAuthorizedByUser error before connecting', async () => {
     await expect(
       dappPage.evaluate(() => {
-        return Promise.resolve(AlgoSigner.accounts())
+        return Promise.resolve(VoiSigner.accounts())
           .then((data) => {
             return data;
           })
@@ -322,7 +322,7 @@ function ConnectWithAlgoSignerObject() {
   test('UserRejected error upon connection refusal', async () => {
     await expect(
       dappPage.evaluate(async () => {
-        const connectPromise = AlgoSigner.connect();
+        const connectPromise = VoiSigner.connect();
         await window.rejectDapp();
         return Promise.resolve(connectPromise)
           .then((data) => {
@@ -340,7 +340,7 @@ function ConnectWithAlgoSignerObject() {
 
   test('Connect Dapp through content.js', async () => {
     const connected = await dappPage.evaluate(async () => {
-      const connectPromise = AlgoSigner.connect();
+      const connectPromise = VoiSigner.connect();
       await window.authorizeDapp();
       return await connectPromise;
     });
@@ -357,5 +357,5 @@ module.exports = {
   VerifyAccount,
   DeleteAccount,
   ConnectWithAlgorandObject,
-  ConnectWithAlgoSignerObject,
+  ConnectWithVoiSignerObject,
 };

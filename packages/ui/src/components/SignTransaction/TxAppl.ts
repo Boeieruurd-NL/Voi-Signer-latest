@@ -1,4 +1,4 @@
-import { obfuscateAddress } from '@algosigner/common/utils';
+import { obfuscateAddress } from '@voisigner/common/utils';
 import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
 import TxTemplate from './Common/TxTemplate';

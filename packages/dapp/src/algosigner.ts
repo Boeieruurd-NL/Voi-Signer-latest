@@ -5,7 +5,7 @@ import {
   byteArrayToBase64,
   stringToByteArray,
   byteArrayToString,
-} from '@algosigner/common/encoding';
+} from '@voisigner/common/encoding';
 
 class Wrapper {
   private static instance: Wrapper;
@@ -35,4 +35,4 @@ class Wrapper {
   }
 }
 
-export const AlgoSigner = Wrapper.getInstance();
+export const VoiSigner = Wrapper.getInstance();

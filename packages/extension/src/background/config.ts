@@ -1,6 +1,6 @@
-import { Connection, ConnectionDetails, NetworkTemplate } from '@algosigner/common/types/network';
-import { Network } from '@algosigner/common/types/network';
-import { logging, LogLevel } from '@algosigner/common/logging';
+import { Connection, ConnectionDetails, NetworkTemplate } from '@voisigner/common/types/network';
+import { Network } from '@voisigner/common/types/network';
+import { logging, LogLevel } from '@voisigner/common/logging';
 import { Backend, API } from './messaging/types';
 import { parseUrlServerAndPort } from './utils/networkUrlParser';
 

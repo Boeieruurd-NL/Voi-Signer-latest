@@ -1,5 +1,5 @@
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
-import { Network } from '@algosigner/common/types/network';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
+import { Network } from '@voisigner/common/types/network';
 import encryptionWrap from '../encryptionWrap';
 import { InternalMethods } from './internalMethods';
 import algosdk from 'algosdk';

@@ -3,13 +3,13 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useState, useContext } from 'preact/hooks';
 import { useObserver } from 'mobx-react-lite';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 import Authenticate from 'components/Authenticate';
 import { StoreContext } from 'services/StoreContext';
-import { NETWORK_HEADERS_TOOLTIP } from '@algosigner/common/strings';
+import { NETWORK_HEADERS_TOOLTIP } from '@voisigner/common/strings';
 
 import { sendMessage } from 'services/Messaging';
-import { SessionObject } from '@algosigner/common/types';
+import { SessionObject } from '@voisigner/common/types';
 
 const NetworkModify: FunctionalComponent = (props: any) => {
   const { closeFunction, isEditable } = props;
@@ -174,7 +174,7 @@ const NetworkModify: FunctionalComponent = (props: any) => {
             >Network Headers
             <a
               target="_blank"
-              href="https://github.com/PureStake/algosigner/blob/develop/docs/add-network.md#network-headers"
+              href="https://github.com/PureStake/voisigner/blob/develop/docs/add-network.md#network-headers"
             >
               <i
                 class="fas fa-info-circle ml-1 has-tooltip-arrow has-tooltip-text-left has-tooltip-fade"

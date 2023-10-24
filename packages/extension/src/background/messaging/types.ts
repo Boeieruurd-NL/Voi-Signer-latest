@@ -1,4 +1,4 @@
-import { NetworkTemplate } from '@algosigner/common/types/network';
+import { NetworkTemplate } from '@voisigner/common/types/network';
 
 // Key and value must match in this enum so we
 // can compare its existance with i.e. "TestNet" in SupportedLedger

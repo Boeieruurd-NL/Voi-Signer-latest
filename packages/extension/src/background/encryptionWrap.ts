@@ -4,13 +4,13 @@
  * =========================================
 */
 
-import { SecureStorageContext, Blob } from  "@algosigner/crypto/src/secureStorageContext";
-import { ExtensionStorage } from "@algosigner/storage/src/extensionStorage";
-import { logging } from "@algosigner/common/logging";
+import { SecureStorageContext, Blob } from  "@voisigner/crypto/src/secureStorageContext";
+import { ExtensionStorage } from "@voisigner/storage/src/extensionStorage";
+import { logging } from "@voisigner/common/logging";
 import EncryptionHelpers from "./utils/encryptionHelpers"
 
 ///
-// Wrapper for the crypto functionality used in AlgoSigner. 
+// Wrapper for the crypto functionality used in voisigner. 
 // Allows for locking and unlocking the extention account wallet. 
 ///
 export default class EncryptionWrap {

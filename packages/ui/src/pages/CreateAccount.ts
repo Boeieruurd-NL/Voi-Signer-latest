@@ -2,7 +2,7 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useState, useEffect, useContext } from 'preact/hooks';
 
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 import SetAccountName from 'components/CreateAccount/SetAccountName';
 import AccountKeys from 'components/CreateAccount/AccountKeys';
 import ConfirmMnemonic from 'components/CreateAccount/ConfirmMnemonic';

@@ -2,8 +2,8 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useState, useContext, useRef, useEffect } from 'preact/hooks';
 import { route } from 'preact-router';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
-import { SessionObject } from '@algosigner/common/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
+import { SessionObject } from '@voisigner/common/types';
 
 import { sendMessage } from 'services/Messaging';
 

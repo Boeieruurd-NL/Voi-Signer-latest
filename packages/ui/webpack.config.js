@@ -67,7 +67,7 @@ module.exports = {
       'react': 'preact/compat',
       'react-dom/test-utils': 'preact/test-utils',
       'react-dom': 'preact/compat',
-      '@algosigner/common': path.resolve(__dirname, '../common/src'),
+      '@voisigner/common': path.resolve(__dirname, '../common/src'),
       'stream': require.resolve('readable-stream'),
     },
     modules: [path.resolve('./src'), path.resolve('./node_modules')],

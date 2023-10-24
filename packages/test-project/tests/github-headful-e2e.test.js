@@ -6,7 +6,7 @@
 
 describe('Basic Happy Path Tests', () => {
     
-    const extensionName = 'AlgoSigner' 
+    const extensionName = 'VoiSigner' 
     const extensionPopupHtml = 'index.html'
     const unsafePassword = 'c5brJp5f'
 

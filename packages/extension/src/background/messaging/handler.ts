@@ -1,10 +1,10 @@
 import { MessageApi } from './api';
 import { Task } from './task';
 import encryptionWrap from '../encryptionWrap';
-import { isFromExtension } from '@algosigner/common/utils';
-import { RequestError } from '@algosigner/common/errors';
-import { JsonRpcMethod, MessageSource } from '@algosigner/common/messaging/types';
-import { logging, LogLevel } from '@algosigner/common/logging';
+import { isFromExtension } from '@voisigner/common/utils';
+import { RequestError } from '@voisigner/common/errors';
+import { JsonRpcMethod, MessageSource } from '@voisigner/common/messaging/types';
+import { logging, LogLevel } from '@voisigner/common/logging';
 
 const auth_methods = [
   JsonRpcMethod.Authorization,
@@ -79,7 +79,7 @@ export class OnMessageHandler extends RequestValidation {
       new encryptionWrap('').checkStorage((exist: boolean) => {
         // Reject message if there's no wallet
         if (!exist) {
-          request.error = RequestError.AlgoSignerNotInitialized;
+          request.error = RequestError.VoiSignerNotInitialized;
           MessageApi.send(request);
         } else {
           if (OnMessageHandler.isAuthorization(method) && OnMessageHandler.isPublic(method)) {

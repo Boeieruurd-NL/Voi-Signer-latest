@@ -1,5 +1,5 @@
-import { RequestError } from '@algosigner/common/errors';
-import { IAssetCloseTx } from '@algosigner/common/interfaces/axfer_close';
+import { RequestError } from '@voisigner/common/errors';
+import { IAssetCloseTx } from '@voisigner/common/interfaces/axfer_close';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

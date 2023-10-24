@@ -3,10 +3,10 @@ import { html } from 'htm/preact';
 import { useLocalStore } from 'mobx-react-lite';
 import { route } from 'preact-router';
 import { autorun } from 'mobx';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 import { sendMessage } from 'services/Messaging';
-import logging, { LogLevel } from '@algosigner/common/logging';
-import { SessionObject, WalletStorage } from '@algosigner/common/types';
+import logging, { LogLevel } from '@voisigner/common/logging';
+import { SessionObject, WalletStorage } from '@voisigner/common/types';
 
 export const StoreContext = createContext(undefined);
 

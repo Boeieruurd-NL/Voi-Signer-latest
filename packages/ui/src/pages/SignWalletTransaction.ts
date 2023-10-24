@@ -2,8 +2,8 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useState, useEffect, useContext } from 'preact/hooks';
 
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
-import { isFromExtension } from '@algosigner/common/utils';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
+import { isFromExtension } from '@voisigner/common/utils';
 
 import TxAcfg from 'components/SignTransaction/TxAcfg';
 import TxPay from 'components/SignTransaction/TxPay';
@@ -15,7 +15,7 @@ import Authenticate from 'components/Authenticate';
 import { sendMessage } from 'services/Messaging';
 import { StoreContext } from 'services/StoreContext';
 import logotype from 'assets/logotype.png';
-import { getBaseSupportedNetworks } from '@algosigner/common/types/network';
+import { getBaseSupportedNetworks } from '@voisigner/common/types/network';
 
 function deny() {
   const params = {

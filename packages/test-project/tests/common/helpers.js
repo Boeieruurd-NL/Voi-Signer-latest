@@ -124,7 +124,7 @@ async function getPopup() {
 async function getLedgerSuggestedParams(ledger = 'TestNet') {
   const params = await dappPage.evaluate((ledger) => {
     return Promise.resolve(
-      AlgoSigner.algod({
+      VoiSigner.algod({
         ledger: ledger,
         path: '/v2/transactions/params',
       })
@@ -174,7 +174,7 @@ async function getSDKSuggestedParams() {
   return params;
 }
 
-async function signDappTxnsWAlgoSigner(transactionsToSign, testFunction) {
+async function signDappTxnsWvoisigner(transactionsToSign, testFunction) {
   const timestampedName = `popupTest-${new Date().getTime().toString()}`;
   if (testFunction) {
     await dappPage.exposeFunction(timestampedName, async () => {
@@ -189,7 +189,7 @@ async function signDappTxnsWAlgoSigner(transactionsToSign, testFunction) {
   await dappPage.waitForTimeout(2000);
   const signedTransactions = await dappPage.evaluate(
     async (transactionsToSign, testFunction, testTimestamp) => {
-      const signPromise = AlgoSigner.signTxn(transactionsToSign)
+      const signPromise = VoiSigner.signTxn(transactionsToSign)
         .then((data) => {
           return data;
         })
@@ -269,7 +269,7 @@ async function sendTransaction(blob) {
   };
   const result = await dappPage.evaluate(async (sendBody) => {
     return Promise.resolve(
-      AlgoSigner.send(sendBody)
+      VoiSigner.send(sendBody)
         .then((data) => {
           return data;
         })
@@ -351,7 +351,7 @@ module.exports = {
   getPopup,
   getLedgerSuggestedParams,
   getSDKSuggestedParams,
-  signDappTxnsWAlgoSigner,
+  signDappTxnsWVoiSigner,
   signDappTxnsWAlgorand,
   sendTransaction,
   base64ToByteArray,

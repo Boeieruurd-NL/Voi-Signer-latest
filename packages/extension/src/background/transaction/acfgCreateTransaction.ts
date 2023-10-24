@@ -1,4 +1,4 @@
-import { IAssetCreateTx } from '@algosigner/common/interfaces/acfg_create';
+import { IAssetCreateTx } from '@voisigner/common/interfaces/acfg_create';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

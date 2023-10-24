@@ -1,5 +1,5 @@
-import { RequestError } from '@algosigner/common/errors';
-import { IKeyRegistrationTx } from '@algosigner/common/interfaces/keyreg';
+import { RequestError } from '@voisigner/common/errors';
+import { IKeyRegistrationTx } from '@voisigner/common/interfaces/keyreg';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

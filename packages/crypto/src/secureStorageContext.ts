@@ -11,7 +11,7 @@ import { InvalidCipherText } from "./errors/types";
 import { Blob } from "./structures/blob";
 
 ///
-// Encryption default functionality for AlgoSigner. 
+// Encryption default functionality for VoiSigner. 
 // Uses pbkdf2 and SHA-256 for passphrase derivation and hash.
 // Uses a 256 bit AES-GCM cipher for encryption.
 // params may contain values for ['nIterations', 'version'].

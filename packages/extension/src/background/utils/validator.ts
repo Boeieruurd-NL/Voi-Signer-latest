@@ -1,5 +1,5 @@
 import algosdk from 'algosdk';
-import { getBaseSupportedNetworks } from '@algosigner/common/types/network';
+import { getBaseSupportedNetworks } from '@voisigner/common/types/network';
 import { Settings } from '../config';
 
 export const STRING_MAX_LENGTH = 1000;

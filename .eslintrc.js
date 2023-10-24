@@ -9,7 +9,7 @@ module.exports = {
     browser: true,
     dappPage: true,
     extensionPage: true,
-    AlgoSigner: true,
+    VoiSigner: true,
     algorand: true,
   },
   parser: '@typescript-eslint/parser',

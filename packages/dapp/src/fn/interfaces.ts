@@ -1,6 +1,6 @@
-import { WalletTransaction } from '@algosigner/common/types';
-import { RequestError } from '@algosigner/common/errors';
-import { JsonPayload } from '@algosigner/common/messaging/types';
+import { WalletTransaction } from '@voisigner/common/types';
+import { RequestError } from '@voisigner/common/errors';
+import { JsonPayload } from '@voisigner/common/messaging/types';
 
 /* eslint-disable no-unused-vars */
 export interface ITask {

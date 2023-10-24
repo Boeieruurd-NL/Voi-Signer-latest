@@ -1,6 +1,6 @@
 import { PLATFORM } from '../utils/environment';
 import { OnMessageHandler } from './handler';
-import { extensionBrowser } from '@algosigner/common/chrome';
+import { extensionBrowser } from '@voisigner/common/chrome';
 
 export class MessageApi {
   public static listen() {

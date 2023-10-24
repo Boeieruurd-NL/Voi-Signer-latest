@@ -1,4 +1,4 @@
-import { IAssetDestroyTx } from '@algosigner/common/interfaces/acfg_destroy';
+import { IAssetDestroyTx } from '@voisigner/common/interfaces/acfg_destroy';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

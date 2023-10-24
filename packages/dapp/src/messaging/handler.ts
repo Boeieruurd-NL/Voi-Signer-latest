@@ -1,5 +1,5 @@
 import { OnMessageListener } from './types';
-import { RequestError } from '@algosigner/common/errors';
+import { RequestError } from '@voisigner/common/errors';
 
 export class OnMessageHandler {
   static promise(resolve: Function, reject: Function): OnMessageListener {

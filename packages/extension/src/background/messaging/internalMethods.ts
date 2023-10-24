@@ -1,13 +1,13 @@
 import algosdk from 'algosdk';
 
-import { extensionBrowser } from '@algosigner/common/chrome';
-import { AliasConfig } from '@algosigner/common/config';
-import { RequestError } from '@algosigner/common/errors';
-import { logging, LogLevel } from '@algosigner/common/logging';
-import { Alias, Namespace, NamespaceConfig, SessionObject, SensitiveAccount, WalletStorage } from '@algosigner/common/types';
-import { ConnectionDetails, getBaseSupportedNetworks, Network, NetworkTemplate } from '@algosigner/common/types/network';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
-import { ExtensionStorage } from '@algosigner/storage/src/extensionStorage';
+import { extensionBrowser } from '@voisigner/common/chrome';
+import { AliasConfig } from '@voisigner/common/config';
+import { RequestError } from '@voisigner/common/errors';
+import { logging, LogLevel } from '@voisigner/common/logging';
+import { Alias, Namespace, NamespaceConfig, SessionObject, SensitiveAccount, WalletStorage } from '@voisigner/common/types';
+import { ConnectionDetails, getBaseSupportedNetworks, Network, NetworkTemplate } from '@voisigner/common/types/network';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
+import { ExtensionStorage } from '@voisigner/storage/src/extensionStorage';
 
 import { Settings } from '../config';
 import encryptionWrap from '../encryptionWrap';
@@ -87,7 +87,7 @@ export class InternalMethods {
         contactAliases.push({
           name: c.name,
           address: c.address,
-          namespace: Namespace.AlgoSigner_Contacts,
+          namespace: Namespace.VoiSigner_Contacts,
         });
       }
 
@@ -98,13 +98,13 @@ export class InternalMethods {
           networkAccountAliases.push({
             name: acc.name,
             address: acc.address,
-            namespace: Namespace.AlgoSigner_Accounts,
+            namespace: Namespace.VoiSigner_Accounts,
           });
         }
         // Save accounts and contacts as aliases
         aliases[n] = {
-          [Namespace.AlgoSigner_Accounts]: networkAccountAliases,
-          [Namespace.AlgoSigner_Contacts]: contactAliases,
+          [Namespace.VoiSigner_Accounts]: networkAccountAliases,
+          [Namespace.VoiSigner_Contacts]: contactAliases,
         };
       }
 
@@ -135,7 +135,7 @@ export class InternalMethods {
     }   
   }
 
-  // Checks if an account for the given address exists on AlgoSigner for a given network.
+  // Checks if an account for the given address exists on voisigner for a given network.
   public static checkAccountIsImported(genesisID: string, address: string): void {
     this.validateSession((session) => {
       const network: string = getNetworkNameFromGenesisID(genesisID);
@@ -204,8 +204,8 @@ export class InternalMethods {
       // Setup initial values for user-stored info
       extensionStorage.setStorage('contacts', [], null);
       const emptyAliases = {
-        [Namespace.AlgoSigner_Accounts]: [],
-        [Namespace.AlgoSigner_Contacts]: [],
+        [Namespace.VoiSigner_Accounts]: [],
+        [Namespace.VoiSigner_Contacts]: [],
       };
       extensionStorage.setStorage(
         'aliases',

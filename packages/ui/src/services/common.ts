@@ -1,6 +1,6 @@
-import { Namespace } from '@algosigner/common/types';
-import algosigner from 'assets/logo.svg';
-import algosignerInverted from 'assets/logo-inverted.png';
+import { Namespace } from '@voisigner/common/types';
+import voisigner from 'assets/logo.svg';
+import voisignerInverted from 'assets/logo-inverted.png';
 import contacts from 'assets/contacts.svg';
 import contactsInverted from 'assets/contacts-inverted.svg';
 import nfd from 'assets/nfd.png';
@@ -38,8 +38,8 @@ export function assetFormat(val: number, dec: number): string | null {
 
 export function getNamespaceIcon(namespace: Namespace, active: boolean) {
   const icons = {
-    [Namespace.AlgoSigner_Contacts]: [contacts, contactsInverted],
-    [Namespace.AlgoSigner_Accounts]: [algosigner, algosignerInverted],
+    [Namespace.VoiSigner_Contacts]: [contacts, contactsInverted],
+    [Namespace.VoiSigner_Accounts]: [voisigner, voisignerInverted],
     [Namespace.NFD]: [nfd, nfd],
   };
   return icons[namespace][active ? 1 : 0];

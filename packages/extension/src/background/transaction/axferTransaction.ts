@@ -1,4 +1,4 @@
-import { IAssetTransferTx } from '@algosigner/common/interfaces/axfer';
+import { IAssetTransferTx } from '@voisigner/common/interfaces/axfer';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

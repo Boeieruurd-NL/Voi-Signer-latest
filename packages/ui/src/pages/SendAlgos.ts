@@ -4,10 +4,10 @@ import { useState, useContext, useEffect, useRef } from 'preact/hooks';
 import { route } from 'preact-router';
 import { Key } from 'ts-key-enum';
 
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
-import { AliasConfig } from '@algosigner/common/config';
-import { obfuscateAddress } from '@algosigner/common/utils';
-import { ALIAS_COLLISION_TOOLTIP, GOVERNANCE_WARNING } from '@algosigner/common/strings';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
+import { AliasConfig } from '@voisigner/common/config';
+import { obfuscateAddress } from '@voisigner/common/utils';
+import { ALIAS_COLLISION_TOOLTIP, GOVERNANCE_WARNING } from '@voisigner/common/strings';
 
 import { StoreContext } from 'services/StoreContext';
 import { sendMessage } from 'services/Messaging';

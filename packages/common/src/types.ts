@@ -34,8 +34,8 @@ export type SignTxnsOpts = {
 };
 
 export enum OptsKeys {
-  ARC01Return = 'AlgoSigner_arc01',
-  sendTxns = 'AlgoSigner_send'
+  ARC01Return = 'VoiSigner_arc01',
+  sendTxns = 'VoiSigner_send'
 }
 
 export type Alias = {
@@ -46,8 +46,8 @@ export type Alias = {
 };
 
 export enum Namespace {
-  AlgoSigner_Contacts = 'AlgoSigner_Contacts',
-  AlgoSigner_Accounts = 'AlgoSigner_Accounts',
+  VoiSigner_Contacts = 'VoiSigner_Contacts',
+  VoiSigner_Accounts = 'VoiSigner_Accounts',
   NFD = 'NFD',
 }
 

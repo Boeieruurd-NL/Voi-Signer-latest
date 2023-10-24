@@ -1,4 +1,4 @@
-import { IAssetClawbackTx } from '@algosigner/common/interfaces/axfer_clawback';
+import { IAssetClawbackTx } from '@voisigner/common/interfaces/axfer_clawback';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

@@ -1,8 +1,8 @@
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 import { OnMessageHandler } from './handler';
-import { extensionBrowser } from '@algosigner/common/chrome';
+import { extensionBrowser } from '@voisigner/common/chrome';
 import encryptionWrap from "../encryptionWrap";
-import * as utils from '@algosigner/common/utils';
+import * as utils from '@voisigner/common/utils';
 import { InternalMethods } from './internalMethods';
 import { Task } from './task';
 
@@ -56,10 +56,10 @@ test('authorization request from dApp goes to public Task methods', () => {
   const sender = {
     id: "eecmbplnlbmoeihkjdebklofcmfadjgd",
     origin: "https://purestake.github.io",
-    url: "https://purestake.github.io/algosigner-dapp-example/",
+    url: "https://purestake.github.io/voisigner-dapp-example/",
     tab: {
       id: 41,
-      title: "https://purestake.github.io/algosigner-dapp-example/"
+      title: "https://purestake.github.io/voisigner-dapp-example/"
     }
   }
   const sendResponse = () => {};

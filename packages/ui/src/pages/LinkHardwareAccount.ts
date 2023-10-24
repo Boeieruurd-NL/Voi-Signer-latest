@@ -2,7 +2,7 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { route } from 'preact-router';
 import { sendMessage } from 'services/Messaging';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 import HeaderView from 'components/HeaderView';
 
 const LinkHardwareAccount: FunctionalComponent = (props: any) => {

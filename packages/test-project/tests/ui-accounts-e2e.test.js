@@ -1,5 +1,5 @@
 /**
- * Basic e2e tests for the AlgoSigner UI
+ * Basic e2e tests for the voisigner UI
  *
  * @group ui/accounts
  */
@@ -16,7 +16,7 @@ describe('Wallet Setup', () => {
   CreateWallet();
 });
 
-// Create a new account in AlgoSigner
+// Create a new account in voisigner
 describe('Create Account', () => {
   const createdAccount = {
     name: 'Created-Account',

@@ -2,7 +2,7 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useState } from 'preact/hooks';
 import { route } from 'preact-router';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 
 import { sendMessage } from 'services/Messaging';
 import Authenticate from 'components/Authenticate';

@@ -1,5 +1,5 @@
-const BUNDLE = 'AlgoSigner.min.js';
-import {extensionBrowser} from '@algosigner/common/chrome';
+const BUNDLE = 'VoiSigner.min.js';
+import {extensionBrowser} from '@voisigner/common/chrome';
 
 class Content {
 
@@ -19,7 +19,7 @@ class Content {
         (document.head||document.documentElement).appendChild(el);
     }
 
-    // Messages coming from AlgoSigner injected library.
+    // Messages coming from voisigner injected library.
     // They are sent to background using chrome.runtime.
     messageChannelListener() {
         const ctx = this;
@@ -52,7 +52,7 @@ class Content {
     }
 
     // Messages coming from background.
-    // They are sent to the AlgoSigner injected library.
+    // They are sent to the voisigner injected library.
     chromeRuntimeListener() {
         const ctx = this;
         extensionBrowser.runtime.onMessage.addListener((d) => {

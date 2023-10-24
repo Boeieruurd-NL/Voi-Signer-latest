@@ -1,5 +1,5 @@
 import { MessageApi } from './api';
-import { extensionBrowser } from '@algosigner/common/chrome';
+import { extensionBrowser } from '@voisigner/common/chrome';
 
 test('message is sent to originTabID tab', () => {
   const message = {

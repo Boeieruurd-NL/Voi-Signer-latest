@@ -16,15 +16,15 @@ const noop = (): void => {
 };
 
 export class AliasConfig {
-  static [Namespace.AlgoSigner_Contacts]: ConfigTemplate = {
-    name: 'AlgoSigner Contact',
+  static [Namespace.VoiSigner_Contacts]: ConfigTemplate = {
+    name: 'VoiSigner Contact',
     networks: null,
     findAliasedAddresses: noop,
     apiTimeout: 0,
   };
 
-  static [Namespace.AlgoSigner_Accounts]: ConfigTemplate = {
-    name: 'AlgoSigner Account',
+  static [Namespace.VoiSigner_Accounts]: ConfigTemplate = {
+    name: 'VoiSigner Account',
     networks: null,
     findAliasedAddresses: noop,
     apiTimeout: 0,

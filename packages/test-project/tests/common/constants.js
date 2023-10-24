@@ -3,7 +3,7 @@ module.exports = {
     password: 'c5brJp5f',
   },
   extension: {
-    name: 'AlgoSigner',
+    name: 'VoiSigner',
     html: 'index.html',
   },
   accounts: {

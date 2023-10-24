@@ -1,5 +1,5 @@
 /**
- * dapp e2e tests for the AlgoSigner V2 Signing functionality
+ * dapp e2e tests for the voisigner V2 Signing functionality
  *
  * @group dapp/groups
  */
@@ -9,11 +9,11 @@ const { accounts } = require('./common/constants');
 const {
   openExtension,
   getLedgerSuggestedParams,
-  signDappTxnsWAlgoSigner,
+  signDappTxnsWvoisigner,
   buildSdkTx,
   prepareWalletTx,
 } = require('./common/helpers');
-const { CreateWallet, ConnectWithAlgoSignerObject, ImportAccount } = require('./common/tests');
+const { CreateWallet, ConnectWithvoisignerObject, ImportAccount } = require('./common/tests');
 
 const account = accounts.ui;
 
@@ -24,7 +24,7 @@ async function signDappTxnGroups(transactionsToSign) {
   await dappPage.waitForTimeout(2000);
   const signedGroups = await dappPage.evaluate(
     async (transactionsToSign) => {
-      const signPromise = AlgoSigner.signTxn(transactionsToSign)
+      const signPromise = voisigner.signTxn(transactionsToSign)
         .then((data) => {
           return data;
         })
@@ -58,7 +58,7 @@ describe('Wallet Setup', () => {
   });
 
   CreateWallet();
-  ConnectWithAlgoSignerObject();
+  ConnectWithvoisignerObject();
 
   test('Get TestNet params', async () => {
     ledgerParams = await getLedgerSuggestedParams();
@@ -84,7 +84,7 @@ describe('Group Transactions Use cases', () => {
 
     await expect(
       dappPage.evaluate((transactions) => {
-        return Promise.resolve(AlgoSigner.signTxn(transactions))
+        return Promise.resolve(voisigner.signTxn(transactions))
           .then((data) => {
             return data;
           })
@@ -95,7 +95,7 @@ describe('Group Transactions Use cases', () => {
     ).resolves.toMatchObject({
       message: expect.stringContaining('group is incomplete'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
     });
   });
 
@@ -111,7 +111,7 @@ describe('Group Transactions Use cases', () => {
     const groupedTransactions = algosdk.assignGroupID([tx1]);
     const unsignedTransactions = [prepareWalletTx(groupedTransactions[0])];
 
-    const signedTransactions = await signDappTxnsWAlgoSigner(unsignedTransactions);
+    const signedTransactions = await signDappTxnsWvoisigner(unsignedTransactions);
     await expect(signedTransactions[0]).not.toBeNull();
   });
 
@@ -143,7 +143,7 @@ describe('Group Transactions Use cases', () => {
     const unsignedTransactions = groupedTransactions.map((txn) => prepareWalletTx(txn));
     unsignedTransactions[2].signers = [];
 
-    const signedTransactions = await signDappTxnsWAlgoSigner(unsignedTransactions);
+    const signedTransactions = await signDappTxnsWvoisigner(unsignedTransactions);
     await expect(signedTransactions[2]).toBeNull();
     await expect(signedTransactions.filter((i) => i)).toHaveLength(2);
 
@@ -156,7 +156,7 @@ describe('Group Transactions Use cases', () => {
     unsignedTransactions[1].signers = [];
     unsignedTransactions[1].stxn = signedTxn.blob;
 
-    const signedTransactions = await signDappTxnsWAlgoSigner(unsignedTransactions);
+    const signedTransactions = await signDappTxnsWvoisigner(unsignedTransactions);
     await expect(signedTransactions[1]).toStrictEqual(signedTxn);
     await expect(signedTransactions[2]).not.toBeNull();
     await expect(signedTransactions.filter((i) => i)).toHaveLength(3);
@@ -183,7 +183,7 @@ describe('Group Transactions Use cases', () => {
 
     await expect(
       dappPage.evaluate((transactions) => {
-        return Promise.resolve(AlgoSigner.signTxn(transactions))
+        return Promise.resolve(voisigner.signTxn(transactions))
           .then((data) => {
             return data;
           })
@@ -194,7 +194,7 @@ describe('Group Transactions Use cases', () => {
     ).resolves.toMatchObject({
       message: expect.stringContaining('16 transactions at a time'),
       code: 4201,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
     });
   });
 

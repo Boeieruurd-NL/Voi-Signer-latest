@@ -1,4 +1,4 @@
-import { logging, LogLevel } from '@algosigner/common/logging';
+import { logging, LogLevel } from '@voisigner/common/logging';
 
 type ParsedUrl = {
   server: string,

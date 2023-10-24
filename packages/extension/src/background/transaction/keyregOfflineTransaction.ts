@@ -1,4 +1,4 @@
-import { IKeyRegistrationTx } from '@algosigner/common/interfaces/keyreg';
+import { IKeyRegistrationTx } from '@voisigner/common/interfaces/keyreg';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

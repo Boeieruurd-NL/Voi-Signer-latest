@@ -9,8 +9,8 @@
 // custom handler for different message types, etc..
 import { MessageApi } from '../messaging/api';
 import { Task } from './task';
-import { MessageSource } from '@algosigner/common/messaging/types';
-import { logging, LogLevel } from '@algosigner/common/logging';
+import { MessageSource } from '@voisigner/common/messaging/types';
+import { logging, LogLevel } from '@voisigner/common/logging';
 
 export class Router {
   handler: Function;

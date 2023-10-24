@@ -1,5 +1,5 @@
 import { OnMessageListener } from './types';
-import { JsonRpcBody, MessageBody, MessageSource } from '@algosigner/common/messaging/types';
+import { JsonRpcBody, MessageBody, MessageSource } from '@voisigner/common/messaging/types';
 
 export class MessageApi {
   mc: MessageChannel;

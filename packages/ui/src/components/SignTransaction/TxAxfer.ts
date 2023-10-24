@@ -1,6 +1,6 @@
 import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
-import { isBaseSupportedNetwork } from '@algosigner/common/utils';
+import { isBaseSupportedNetwork } from '@voisigner/common/utils';
 
 import TxTemplate from './Common/TxTemplate';
 import ContactPreview from 'components/ContactPreview';

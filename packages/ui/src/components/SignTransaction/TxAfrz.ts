@@ -1,7 +1,7 @@
 import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
 import TxTemplate from './Common/TxTemplate';
-import { isBaseSupportedNetwork } from '@algosigner/common/utils';
+import { isBaseSupportedNetwork } from '@voisigner/common/utils';
 
 const TxAfrz: FunctionalComponent = (props: any) => {
   const { tx, account, network, vo, estFee, msig, authAddr } = props;

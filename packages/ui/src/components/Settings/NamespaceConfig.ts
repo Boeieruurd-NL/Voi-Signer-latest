@@ -2,10 +2,10 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useState, useEffect } from 'preact/hooks';
 
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 import { sendMessage } from 'services/Messaging';
 
-import { NamespaceConfig } from '@algosigner/common/types';
+import { NamespaceConfig } from '@voisigner/common/types';
 import { getNamespaceIcon } from 'services/common';
 import toggleOn from 'assets/toggle-on.svg';
 import toggleOff from 'assets/toggle-off.svg';

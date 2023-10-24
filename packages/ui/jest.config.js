@@ -25,7 +25,7 @@ module.exports = {
         "^react-dom$": "preact/compat",
         "^create-react-class$": "preact/compat/lib/create-react-class",
         "^react-addons-css-transition-group$": "preact-css-transition-group",
-        "^@algosigner/common(.*)$": "<rootDir>/../common/src$1"
+        "^@voisigner/common(.*)$": "<rootDir>/../common/src$1"
 
     },
     "roots": [

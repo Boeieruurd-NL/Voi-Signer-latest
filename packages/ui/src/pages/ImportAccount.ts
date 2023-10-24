@@ -2,14 +2,14 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useState, useContext } from 'preact/hooks';
 import { route } from 'preact-router';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 
 import { StoreContext } from 'services/StoreContext';
 import HeaderView from 'components/HeaderView';
 import Authenticate from 'components/Authenticate';
 
 import { sendMessage } from 'services/Messaging';
-import { REFERENCE_ACCOUNT_TOOLTIP } from '@algosigner/common/strings';
+import { REFERENCE_ACCOUNT_TOOLTIP } from '@voisigner/common/strings';
 import algosdk from 'algosdk';
 
 const NUMBER_OF_WORDS = 25;

@@ -1,5 +1,5 @@
 /**
- * dapp e2e tests for the AlgoSigner V2 Signing functionality
+ * dapp e2e tests for the voisigner V2 Signing functionality
  *
  * @group dapp/arcs/misc
  */

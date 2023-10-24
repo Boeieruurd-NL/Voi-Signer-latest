@@ -1,8 +1,8 @@
 import algosdk from 'algosdk';
-import { WalletMultisigMetadata } from '@algosigner/common/types';
-import { RequestError } from '@algosigner/common/errors';
+import { WalletMultisigMetadata } from '@voisigner/common/types';
+import { RequestError } from '@voisigner/common/errors';
 import { Validate, ValidationResponse } from '../utils/validator';
-import { logging } from '@algosigner/common/logging';
+import { logging } from '@voisigner/common/logging';
 
 type AssetInfo = {
   unitName: string;

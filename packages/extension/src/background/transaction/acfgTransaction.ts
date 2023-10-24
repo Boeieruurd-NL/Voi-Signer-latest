@@ -1,4 +1,4 @@
-import { IAssetConfigTx } from '@algosigner/common/interfaces/acfg';
+import { IAssetConfigTx } from '@voisigner/common/interfaces/acfg';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

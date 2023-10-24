@@ -28,10 +28,10 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      '@algosigner/common': srcPath('../common/src'),
-      '@algosigner/crypto': srcPath('../crypto'),
-      '@algosigner/storage': srcPath('../storage'),
-      '@algosigner/ui': srcPath('../ui'),
+      '@voisigner/common': srcPath('../common/src'),
+      '@voisigner/crypto': srcPath('../crypto'),
+      '@voisigner/storage': srcPath('../storage'),
+      '@voisigner/ui': srcPath('../ui'),
     },
     extensions: ['.ts', '.tsx', '.js', '.json'],
     fallback: {

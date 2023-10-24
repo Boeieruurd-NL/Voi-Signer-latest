@@ -1,4 +1,4 @@
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 
 export function sendMessage(method: JsonRpcMethod, params: any, callback: any) {
     chrome.runtime.sendMessage({

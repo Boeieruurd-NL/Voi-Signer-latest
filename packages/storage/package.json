@@ -1,9 +1,9 @@
 {
-  "name": "voi-igner-storage",
+  "name": "voi-signer-storage",
   "version": "1.0.0",
   "author": "Edited by Boeieruurd - OG Code by Purestake",
   "license": "MIT",
-  "description": "Storage wrapper for saving and retrieving extention information in AlgoSigner.",
+  "description": "Storage wrapper for saving and retrieving extention information in Voi-Signer.",
   "devDependencies": {
     "ts-loader": "^9.2.6",
     "typescript": "^4.4.4",

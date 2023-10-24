@@ -3,7 +3,7 @@ import { html } from 'htm/preact';
 import { useState, useContext } from 'preact/hooks';
 import { useObserver } from 'mobx-react-lite';
 import { Link } from 'preact-router';
-import { extensionBrowser } from '@algosigner/common/chrome';
+import { extensionBrowser } from '@voisigner/common/chrome';
 
 import { StoreContext } from 'services/StoreContext';
 import AccountPreview from 'components/AccountPreview';

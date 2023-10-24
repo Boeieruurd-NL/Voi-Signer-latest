@@ -29,7 +29,7 @@ class PuppeteerEnvironment extends NodeEnvironment {
     });
     const pages = await browser.pages();
     this.global.dappPage = pages[0];
-    // We use a sample page because algosigner.min.js doesn't load on empty pages
+    // We use a sample page because voisigner.min.js doesn't load on empty pages
     (this.global.dappPage as Page).goto(SAMPLE_PAGE);
     this.global.extensionPage = await browser.newPage();
     this.global.browser = browser;

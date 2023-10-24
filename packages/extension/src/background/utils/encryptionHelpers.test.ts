@@ -1,5 +1,5 @@
 import EncryptionHelpers from  "./encryptionHelpers";
-import { Blob } from '@algosigner/crypto/src/secureStorageContext';
+import { Blob } from '@voisigner/crypto/src/secureStorageContext';
 
 test('Validate blob object component conversion to hex', () => {
     let blob = new Blob(EncryptionHelpers.hexStringToUint8Array("e43f3d9951dcc01ff1dff199aac725bd4d"),

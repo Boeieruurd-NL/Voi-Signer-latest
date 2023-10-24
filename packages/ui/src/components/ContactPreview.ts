@@ -1,6 +1,6 @@
 import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
-import { obfuscateAddress } from '@algosigner/common/utils';
+import { obfuscateAddress } from '@voisigner/common/utils';
 
 const ContactPreview: FunctionalComponent = (props: any) => {
   const { contact, rightSide, style, className, action, id } = props;

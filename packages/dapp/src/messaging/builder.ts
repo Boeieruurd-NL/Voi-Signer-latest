@@ -1,7 +1,7 @@
-import { RequestError } from '@algosigner/common/errors';
-import { JsonRpcMethod, JsonPayload } from '@algosigner/common/messaging/types';
+import { RequestError } from '@voisigner/common/errors';
+import { JsonRpcMethod, JsonPayload } from '@voisigner/common/messaging/types';
 
-import { JsonRpc } from '@algosigner/common/messaging/jsonrpc';
+import { JsonRpc } from '@voisigner/common/messaging/jsonrpc';
 
 import { MessageApi } from './api';
 import { OnMessageHandler } from './handler';

@@ -1,5 +1,5 @@
 # Introduction
-Crypto wrapper for AlgoSigner. Creates wrapped functionality to Web Crypto API for encrypting and decrypting ArrayBuffer objects with an associated ArrayBuffer passphrase. 
+Crypto wrapper for VoiSigner. Creates wrapped functionality to Web Crypto API for encrypting and decrypting ArrayBuffer objects with an associated ArrayBuffer passphrase. 
 
 ## Project Use
 After installation output files will be in the /dist/ folder. This includes secureStorageContext.js, and the typescript definitions for the supporting structure. 

@@ -2,10 +2,10 @@ import { ITask } from './interfaces';
 
 import { MessageBuilder } from '../messaging/builder';
 
-import { SignTxnsOpts, OptsKeys, WalletTransaction } from '@algosigner/common/types';
-import { RequestError } from '@algosigner/common/errors';
-import { JsonRpcMethod, JsonPayload } from '@algosigner/common/messaging/types';
-import { Runtime } from '@algosigner/common/runtime/runtime';
+import { SignTxnsOpts, OptsKeys, WalletTransaction } from '@voisigner/common/types';
+import { RequestError } from '@voisigner/common/errors';
+import { JsonRpcMethod, JsonPayload } from '@voisigner/common/messaging/types';
+import { Runtime } from '@voisigner/common/runtime/runtime';
 
 export class Task extends Runtime implements ITask {
   static subscriptions: { [key: string]: Function } = {};

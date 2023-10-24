@@ -1,5 +1,5 @@
-import { getBaseSupportedNetworks, Network, NetworkTemplate } from '@algosigner/common/types/network';
-import { ExtensionStorage } from '@algosigner/storage/src/extensionStorage';
+import { getBaseSupportedNetworks, Network, NetworkTemplate } from '@voisigner/common/types/network';
+import { ExtensionStorage } from '@voisigner/storage/src/extensionStorage';
 import { Settings } from '../config';
 import { Cache } from '../messaging/types';
 

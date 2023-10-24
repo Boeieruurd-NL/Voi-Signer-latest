@@ -24,7 +24,7 @@ export class RequestError {
     );
   static NoAccountMatch = (address: string, ledger: string): RequestError =>
     new RequestError(
-      `No matching account found on AlgoSigner for address "${address}" on network ${ledger}.`,
+      `No matching account found on VoiSigner for address "${address}" on network ${ledger}.`,
       4100
     );
   static NoLedgerProvided = (base: string, injected: string): RequestError =>
@@ -40,11 +40,11 @@ export class RequestError {
     4201
   );
   static TooManyTransactions = new RequestError(
-    `AlgoSigner does not support signing more than ${RequestError.MAX_GROUP_SIZE} transactions at a time.`,
+    `VoiSigner does not support signing more than ${RequestError.MAX_GROUP_SIZE} transactions at a time.`,
     4201
   );
-  static AlgoSignerNotInitialized = new RequestError(
-    'AlgoSigner was not initialized properly beforehand.',
+  static VoiSignerNotInitialized = new RequestError(
+    'VoiSigner was not initialized properly beforehand.',
     4200
   );
   static SiteNotAuthorizedByUser = new RequestError(
@@ -71,7 +71,7 @@ export class RequestError {
     );
   static CantMatchMsigSigners = (info: string): RequestError =>
     new RequestError(
-      `AlgoSigner does not currently possess one of the requested signers for this multisig transaction: ${info}.`,
+      `VoiSigner does not currently possess one of the requested signers for this multisig transaction: ${info}.`,
       4300
     );
   static InvalidSignerAddress = (address: string): RequestError =>
@@ -159,7 +159,7 @@ export class RequestError {
   new RequestError('There was a problem validating the transaction(s) to be signed. Please refer to the data property for the reasons behind each transaction.', code, data);
 
   protected constructor(message: string, code: number, data?: any) {
-    this.name = 'AlgoSignerRequestError';
+    this.name = 'VoiSignerRequestError';
     this.message = message;
     this.code = code;
     this.data = data;

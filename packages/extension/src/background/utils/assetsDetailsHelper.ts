@@ -1,5 +1,5 @@
-import { ExtensionStorage } from '@algosigner/storage/src/extensionStorage';
-import { Network } from '@algosigner/common/types/network';
+import { ExtensionStorage } from '@voisigner/storage/src/extensionStorage';
+import { Network } from '@voisigner/common/types/network';
 import { InternalMethods } from '../messaging/internalMethods';
 import { Cache } from '../messaging/types';
 import { initializeCache } from './helper';
@@ -11,7 +11,7 @@ const TIMEOUT = 500;
 ///
 export default class AssetsDetailsHelper {
   private static assetsToAdd: { [key: string]: Array<number> } = {
-[Network.VoiTestNet]: [],
+    [Network.VoiTestNet]: [],
     [Network.TestNet]: [],
     [Network.MainNet]: [],
   };

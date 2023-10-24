@@ -1,5 +1,5 @@
 /**
- * Basic e2e tests for the AlgoSigner UI
+ * Basic e2e tests for the voisigner UI
  *
  * @group ui/networks
  */
@@ -27,7 +27,7 @@ describe('Wallet Setup', () => {
   CreateWallet();
 });
 
-// Create a new network in AlgoSigner
+// Create a new network in voisigner
 describe('Create and Test Custom Networks', () => {
   const NetworkConfig = {
     name: 'E2ENet',

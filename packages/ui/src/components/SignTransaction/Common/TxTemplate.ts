@@ -1,7 +1,7 @@
 import { html } from 'htm/preact';
 import { FunctionalComponent } from 'preact';
 import { useState } from 'preact/hooks';
-import { MULTISIG_TOOLTIP } from '@algosigner/common/strings';
+import { MULTISIG_TOOLTIP } from '@voisigner/common/strings';
 import TxAlert from './TxAlert';
 
 const TxTemplate: FunctionalComponent = (props: any) => {

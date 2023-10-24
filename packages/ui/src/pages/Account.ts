@@ -1,4 +1,4 @@
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useState, useContext, useEffect } from 'preact/hooks';

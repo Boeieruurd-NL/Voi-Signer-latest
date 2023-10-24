@@ -1,4 +1,4 @@
-import { IPaymentTx } from '@algosigner/common/interfaces/pay';
+import { IPaymentTx } from '@voisigner/common/interfaces/pay';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

@@ -3,7 +3,7 @@ import { html } from 'htm/preact';
 import { useContext, useState, useEffect } from 'preact/hooks';
 import { route } from 'preact-router';
 import qrcode from 'qrcode-generator';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 
 import { sendMessage } from 'services/Messaging';
 import { StoreContext } from 'services/StoreContext';

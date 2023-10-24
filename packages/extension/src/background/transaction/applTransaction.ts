@@ -1,4 +1,4 @@
-import { IApplTx } from '@algosigner/common/interfaces/appl';
+import { IApplTx } from '@voisigner/common/interfaces/appl';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

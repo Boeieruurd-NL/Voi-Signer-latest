@@ -2,7 +2,7 @@ import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useState, useEffect, useContext } from 'preact/hooks';
 import { route } from 'preact-router';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 
 import AddAssetConfirm from 'components/Account/AddAssetConfirm';
 import HeaderView from 'components/HeaderView';

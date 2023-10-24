@@ -44,7 +44,7 @@ describe('Wallet Setup', () => {
   });
 });
 
-// Create a new account in AlgoSigner
+// Create a new account in voisigner
 describe('Link Ledger Account', () => {
   test('Link An Account, Step 1 - Begin Linking Process', async () => {
     await extensionPage.waitForSelector('#addAccount');
@@ -88,7 +88,7 @@ describe('dApp functionalities', () => {
 
   ConnectWithAlgorandObject([linkedLedgerAccount]);
 
-  test('Create Asset Opt-in tx and send it to AlgoSigner', async () => {
+  test('Create Asset Opt-in tx and send it to voisigner', async () => {
     await extensionPage.waitForSelector('#addAccount');
 
     const optinTx = prepareWalletTx(

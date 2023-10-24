@@ -1,4 +1,4 @@
-import { IAssetFreezeTx } from '@algosigner/common/interfaces/afrz';
+import { IAssetFreezeTx } from '@voisigner/common/interfaces/afrz';
 import { BaseValidatedTxnWrap } from './baseValidatedTxnWrap';
 
 ///

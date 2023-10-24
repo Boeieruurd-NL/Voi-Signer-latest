@@ -1,7 +1,7 @@
 import { FunctionalComponent } from 'preact';
 import { html } from 'htm/preact';
 import { useEffect, useState, useContext } from 'preact/hooks';
-import { JsonRpcMethod } from '@algosigner/common/messaging/types';
+import { JsonRpcMethod } from '@voisigner/common/messaging/types';
 
 import { StoreContext } from 'services/StoreContext';
 

@@ -1,2 +1,2 @@
-export { AlgoSigner } from './algosigner';
+export { VoiSigner } from './algosigner';
 export { algorand } from './algorand';

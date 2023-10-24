@@ -1,5 +1,5 @@
 /**
- * dapp e2e tests for the AlgoSigner V2 Signing functionality
+ * dapp e2e tests for the voisigner V2 Signing functionality
  *
  * @group dapp/arcs/signtxns
  */
@@ -89,7 +89,7 @@ describe('Txn Signing Validation errors', () => {
     });
   });
 
-  test('Error on Sender not imported to AlgoSigner', async () => {
+  test('Error on Sender not imported to voisigner', async () => {
     const invalidAccount = accounts.ui.address;
     const txn = prepareWalletTx(
       buildSdkTx({
@@ -115,7 +115,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4100,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -151,7 +151,7 @@ describe('Txn Signing Validation errors', () => {
     ).resolves.toMatchObject({
       message: expect.stringContaining('There are no transactions to sign'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
     });
   });
 
@@ -181,7 +181,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -215,7 +215,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -249,7 +249,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -284,7 +284,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
@@ -292,7 +292,7 @@ describe('Txn Signing Validation errors', () => {
   });
 
   // Msig validations
-  test('Error on Msig Signer not imported to AlgoSigner', async () => {
+  test('Error on Msig Signer not imported to voisigner', async () => {
     const invalidAccount = msigAccount.subaccounts[2].address;
     const txn = { ...msigTxn };
     txn.signers = [account1.address, invalidAccount];
@@ -310,7 +310,7 @@ describe('Txn Signing Validation errors', () => {
     expect(signResponse).toMatchObject({
       message: expect.stringContaining('There was a problem validating the transaction(s) to be signed.'),
       code: 4300,
-      name: expect.stringContaining('AlgoSignerRequestError'),
+      name: expect.stringContaining('voisignerRequestError'),
       data: expect.anything(),
     });
     expect(signResponse.data).toHaveLength(1);
