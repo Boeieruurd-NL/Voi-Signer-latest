@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Voi-Signer",
-  "author": "https://voi.network",
+  "author": "Boeieruurd & Purestake",
   "version": "1.0.0",
   "description": "Voi Wallet Extension | Send & Receive Voi | Sign dApp Transactions",
   "icons": {
@@ -22,8 +22,8 @@
     "default_icon": "icon.png",
     "default_popup": "index.html"
   },
-  "content_security_policy": { 
-    "extension_pages": "default-src 'self'; connect-src https://algosigner.api.purestake.io/; script-src 'self'; object-src 'self'; style-src 'unsafe-inline'; style-src-elem 'unsafe-inline';"
+  "content_security_policy": {
+    "extension_pages": "default-src 'self'; connect-src https://testnet-api.voi.nodly.io/ https://testnet-idx.voi.nodly.io/ https://testnet-api.algonode.cloud/ https://testnet-idx.algonode.cloud/ https://mainnet-api.algonode.cloud/ https://mainnet-idx.algonode.cloud/ https://governance.algorand.foundation/; script-src 'self'; object-src 'self'; style-src 'unsafe-inline'; style-src-elem 'unsafe-inline';"
   },
   "web_accessible_resources": 
   [
