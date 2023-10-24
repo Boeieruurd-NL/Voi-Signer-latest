@@ -12,10 +12,10 @@ export const StoreContext = createContext(undefined);
 
 export const StoreProvider = ({ children }) => {
   const store = useLocalStore(() => ({
-    activeNetwork: 'Voi Testnet',
+    activeNetwork: 'VoiTestNet',
     setActiveNetwork: (networkName: string) => {
       if (!networkName) {
-        networkName = 'Voi Testnet';
+        networkName = 'VoiTestNet';
       } else if (!store.wallet[networkName]) {
         store.wallet[networkName] = [];
       }
@@ -44,7 +44,7 @@ export const StoreProvider = ({ children }) => {
     },
     deleteNetwork: (networkName: string, callback: Function) => {
       delete store[networkName];
-      store.setActiveNetwork('Voi Testnet');
+      store.setActiveNetwork('VoiTestNet');
       // Reset available networks
       store.availableNetworks = [];
       store.getAvailableNetworks((availableNetworks) => {

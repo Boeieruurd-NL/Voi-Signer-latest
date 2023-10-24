@@ -145,7 +145,7 @@ export function getValidatedTxnWrap(
 
 export function getNetworkNameFromGenesisID(genesisID: string): string {
   // Default the network to mainnet
-  const defaultNetwork = 'Voi Testnet';
+  const defaultNetwork = 'VoiTestNet';
 
   // Check Genesis ID for base networks first
   const defaultNetworks = getBaseSupportedNetworks();
@@ -197,7 +197,7 @@ export function getNetworkFromMixedGenesis(genesisID: string, genesisHash?: stri
   }
 
   // Default the network to mainnet
-  return defaultNetworks.find((n) => 'Voi Testnet' === n['name']);
+  return defaultNetworks.find((n) => 'VoiTestNet' === n['name']);
 }
 
 export function calculateEstimatedFee(transactionWrap: BaseValidatedTxnWrap, params: any): void {

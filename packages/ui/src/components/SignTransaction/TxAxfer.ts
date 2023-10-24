@@ -13,7 +13,7 @@ const TxAxfer: FunctionalComponent = (props: any) => {
   const base = {
     'TestNet': 'https://testnet.algoexplorer.io',
     'MainNet': 'https://algoexplorer.io',
-    'Voi Testnet': 'https://voi.observer/explorer'
+    'VoiTestNet': 'https://voi.observer/explorer'
   }[network] || 'https://some-default-explorer.com';
 
   switch (type) {

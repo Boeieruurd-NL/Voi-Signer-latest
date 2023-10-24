@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 export enum Network {
-  VoiTestNet = 'Voi Testnet',
+  VoiTestNet = 'VoiTestNet',
   TestNet = 'TestNet',
   MainNet = 'MainNet',
 }

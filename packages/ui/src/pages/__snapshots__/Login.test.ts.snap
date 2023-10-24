@@ -17,7 +17,7 @@ exports[`Login should match snapshot 1`] = `
         <img
           className="mb-3"
           src="test-file-stub"
-          width="120"
+          width="180"
         />
       </div>
     </section>
@@ -36,7 +36,7 @@ exports[`Login should match snapshot 1`] = `
       <p
         className="mt-5 has-text-centered is-size-7"
       >
-        AlgoSigner does not store your password. If you’ve forgotten your password, you’ll need
+        VOI-Signer does not store your password. If you’ve forgotten your password, you’ll need
             to create a new wallet and re-link your accounts.
       </p>
     </section>

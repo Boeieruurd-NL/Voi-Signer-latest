@@ -60,11 +60,11 @@ exports[`TxAcfg should match snapshot 1`] = `
     className="has-text-centered"
   >
     <a
-      href="https://goalseeker.purestake.io/algorand/testnet/transaction/B2EMD3434ROUEZESQXI3C5TNUBUL6AZJXYEEE54BBRGBJ743SKLQ"
+      href="https://testnet.algoexplorer.io/tx/B2EMD3434ROUEZESQXI3C5TNUBUL6AZJXYEEE54BBRGBJ743SKLQ"
       rel="noopener noreferrer"
       target="_blank"
     >
-      See details in GoalSeeker
+      See details in Explorer
     </a>
   </div>
 </div>

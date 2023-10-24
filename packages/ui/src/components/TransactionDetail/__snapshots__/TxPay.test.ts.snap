@@ -45,7 +45,7 @@ exports[`TxPay should match snapshot 1`] = `
     </strong>
     <span>
       0.004232
-       Algos
+       VOI
     </span>
   </p>
   <p>
@@ -60,11 +60,11 @@ exports[`TxPay should match snapshot 1`] = `
     className="has-text-centered"
   >
     <a
-      href="https://goalseeker.purestake.io/algorand/testnet/transaction/FTENCQN3ZPSK7CZP2WVJ2FGZG66K6ZT65NEECKWGJ753KAXQSOZQ"
+      href="https://testnet.algoexplorer.io/tx/FTENCQN3ZPSK7CZP2WVJ2FGZG66K6ZT65NEECKWGJ753KAXQSOZQ"
       rel="noopener noreferrer"
       target="_blank"
     >
-      See details in GoalSeeker
+      See details in Explorer
     </a>
   </div>
 </div>

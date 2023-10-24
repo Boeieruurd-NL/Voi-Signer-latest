@@ -11,7 +11,7 @@ const TxAxfer: FunctionalComponent = (props: any) => {
         return 'https://testnet.algoexplorer.io/tx/';
       case 'MainNet':
         return 'https://algoexplorer.io/tx/';
-      case 'Voi Testnet':
+      case 'VoiTestNet':
         return 'https://voi.observer/explorer/transaction/';
       default:
         return 'https://some-default-explorer.com/tx/';

@@ -23,7 +23,7 @@ const AddAssetConfirm: FunctionalComponent = (props: any) => {
         return type === 'asset' ? 'https://testnet.algoexplorer.io/asset/' : 'https://testnet.algoexplorer.io/tx/';
       case 'MainNet':
         return type === 'asset' ? 'https://algoexplorer.io/asset/' : 'https://algoexplorer.io/tx/';
-      case 'Voi Testnet':
+      case 'VoiTestNet':
         return type === 'asset' ? 'https://voi.observer/explorer/asset/' : 'https://voi.observer/explorer/transaction/';
       default:
         // Handle the unexpected ledger value
