@@ -13,5 +13,9 @@
   "scripts": {
     "build": "npm run clean && webpack",
     "clean": "rm -rf ./dist/"
+  },
+  "dependencies": {
+    "algosdk": "^2.7.0",
+    "cross-fetch": "^4.0.0"
   }
 }

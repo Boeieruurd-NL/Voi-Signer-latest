@@ -16,5 +16,9 @@
     "build": "npm run clean && tsc",
     "clean": "rm -rf ./dist/",
     "test": "jest"
+  },
+  "dependencies": {
+    "algosdk": "^2.7.0",
+    "cross-fetch": "^4.0.0"
   }
 }

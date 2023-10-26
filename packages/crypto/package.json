@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "author": "Edited by Boeieruurd - OG Code by Purestake",
   "description": "Cryptographic wrapper for saving and retrieving extention information in Voi-Signer.",
-
   "license": "MIT",
   "devDependencies": {
     "@types/jest": "^27.0.0",
@@ -18,5 +17,8 @@
     "build": "npm run clean && webpack",
     "clean": "rm -rf ./dist/",
     "test": "jest"
+  },
+  "dependencies": {
+    "cross-fetch": "^4.0.0"
   }
 }

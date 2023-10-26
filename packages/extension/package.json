@@ -19,7 +19,7 @@
     "webpack-cli": "^4.10.0"
   },
   "dependencies": {
-    "algosdk": "2.0.0",
+    "algosdk": "^2.7.0",
     "buffer": "^6.0.3",
     "cross-fetch": "^4.0.0"
   },

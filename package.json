@@ -50,6 +50,7 @@
     "*.{js,json,ts}": "eslint --quiet --fix"
   },
   "dependencies": {
+    "algosdk": "^2.7.0",
     "cross-fetch": "^4.0.0"
   }
 }
