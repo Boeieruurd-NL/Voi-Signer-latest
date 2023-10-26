@@ -48,5 +48,8 @@
   "lint-staged": {
     "*.{js,json,ts,scss,css,md,yaml}": "prettier --write",
     "*.{js,json,ts}": "eslint --quiet --fix"
+  },
+  "dependencies": {
+    "cross-fetch": "^4.0.0"
   }
 }

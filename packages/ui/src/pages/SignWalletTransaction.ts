@@ -46,18 +46,24 @@ const SignWalletTransaction: FunctionalComponent = () => {
 
   useEffect(() => {
     chrome.runtime.onMessage.addListener((request, sender: any) => {
-      // Check if a message has already been recieved
+      console.log('Received message:', request, 'from sender:', sender);
+  
+      // Check if a message has already been received
       if (Object.keys(request).length === 0) return false;
-
+  
       // Check if the message is coming from the background script
       if (
-        isFromExtension(sender.origin) &&
+        //isFromExtension(sender.url) &&
         request.body.method == JsonRpcMethod.SignWalletTransaction
       ) {
+        console.log('Setting request and responseOriginTabID');
         setRequest(request);
         responseOriginTabID = request.originTabID;
+        console.log('responseOriginTabID set to:', responseOriginTabID);
       }
     });
+  
+  
 
     window.addEventListener('beforeunload', deny);
     return () => window.removeEventListener('beforeunload', deny);

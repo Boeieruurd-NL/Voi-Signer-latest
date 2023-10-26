@@ -654,7 +654,7 @@ export class InternalMethods {
       extensionBrowser.tabs.create(
         {
           active: true,
-          url: extensionBrowser.extension.getURL(`/index.html#/${network.name}/ledger-hardware-sign`),
+          url: extensionBrowser.runtime.getURL(`/index.html#/${network.name}/ledger-hardware-sign`),
         },
         (tab) => {
           // Tab object is created here, but extension popover will close.

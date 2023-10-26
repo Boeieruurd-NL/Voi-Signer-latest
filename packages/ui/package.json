@@ -17,6 +17,7 @@
     "@ledgerhq/hw-transport-webhid": "^6.27.9",
     "algosdk": "2.0.0",
     "buffer": "^6.0.3",
+    "cross-fetch": "^4.0.0",
     "history": "^5.0.0",
     "htm": "^3.0.4",
     "mobx": "^5.15.6",
@@ -29,6 +30,8 @@
   },
   "devDependencies": {
     "@creativebulma/bulma-tooltip": "^1.2.0",
+    "@fontsource/open-sans": "^4.5.8",
+    "@fontsource/roboto": "^4.5.5",
     "@types/chrome": "0.0.116",
     "@types/jest": "^27.0.0",
     "bulma": "^0.9.3",
@@ -49,8 +52,6 @@
     "typescript": "^4.4.4",
     "webpack": "^5.58.2",
     "webpack-cli": "^4.9.0",
-    "webpack-dev-server": "^4.3.1",
-    "@fontsource/open-sans": "^4.5.8",
-    "@fontsource/roboto": "^4.5.5"
+    "webpack-dev-server": "^4.3.1"
   }
 }
