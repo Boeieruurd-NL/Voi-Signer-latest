@@ -8,6 +8,7 @@ function srcPath(subdir) {
 module.exports = {
   // Change to your "entry-point".
   mode: 'production',
+  devtool: 'source-map', //remove this when done debugging.
   optimization: {
     // We no not want to minimize our code.
     minimize: false,

@@ -24,7 +24,7 @@ const Wallet: FunctionalComponent = () => {
       extensionBrowser.tabs.create(
         {
           active: true,
-          url: extensionBrowser.extension.getURL(`/index.html#/${network}/create-account`),
+          url: extensionBrowser.runtime.getURL(`/index.html#/${network}/create-account`),
         }
       );
     };
