@@ -112,28 +112,33 @@ export class InternalMethods {
     });
   }
 
-  public static validateSession(callback){
-    // Check if the session wallet exists
+  static validateSession(callback) {
     if (!session.wallet) {
-      const extensionStorage = new ExtensionStorage();
-      // If it doesn't exist, get the cache from the storage
-      extensionStorage.getStorage('cache', (response: any) => {
-        // If the response exists, assign the values to the session
-        if(response) {
-          session.wallet =  response.wallet as WalletStorage;
-          session.network =  response.ledger as Network;
-          session.availableNetworks =  response.availableLedgers as Array<NetworkTemplate>;
-          session.txnRequest =  response.txnRequest;
+        const extensionStorage = new ExtensionStorage();
+        extensionStorage.getStorage('cache', (response) => {
+            if (response) {
+                session.wallet = response.wallet || {};
+                session.network = response.ledger;
+                session.availableNetworks = response.availableLedgers;
+                session.txnRequest = response.txnRequest;
+            } else {
+                session.wallet = {};
+            }
+            // Ensure network is initialized
+            if (!session.wallet[session.network]) {
+                session.wallet[session.network] = [];
+            }
+            callback(session);
+        });
+    } else {
+        // Ensure network is initialized
+        if (!session.wallet[session.network]) {
+            session.wallet[session.network] = [];
         }
-        // Call the callback function with the session as an argument
         callback(session);
-      });
     }
-    // If the session wallet exists, call the callback function with the session as an argument
-    else {
-      callback(session);
-    }   
-  }
+}
+
 
   // Checks if an account for the given address exists on voisigner for a given network.
   public static checkAccountIsImported(genesisID: string, address: string): void {
