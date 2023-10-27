@@ -351,7 +351,7 @@ module.exports = {
   getPopup,
   getLedgerSuggestedParams,
   getSDKSuggestedParams,
-  signDappTxnsWVoiSigner,
+  signDappTxnsWvoisigner,
   signDappTxnsWAlgorand,
   sendTransaction,
   base64ToByteArray,
