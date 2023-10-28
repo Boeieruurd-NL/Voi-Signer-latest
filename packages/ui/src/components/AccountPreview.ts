@@ -50,8 +50,8 @@ const AccountPreview: FunctionalComponent = (props: any) => {
           <b>${account.name}</b>
         </div>
         <div class="is-size-7 has-text-right is-flex-grow-1">
-          ${results && results.assets && html`<b>${results.assets.length}</b> VSAs<br />`}
-          ${results && html`<b>${numFormat(results.amount / 1e6, 6)}</b> VOI`}
+          ${results && results.assets && html`<b>${results.assets.length}</b> ${ledger === 'VoiTestNet' ? 'VSAs' : 'ASAs'}<br />`}
+          ${results && html`<b>${numFormat(results.amount / 1e6, 6)}</b> ${ledger === 'VoiTestNet' ? 'VOI' : 'Algos'}`}
           ${results === null && error && html`<span>${error}</span>`}
           ${results === null &&
           !error &&
