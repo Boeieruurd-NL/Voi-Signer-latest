@@ -41,7 +41,7 @@ const TxPay: FunctionalComponent = (props: any) => {
       </p>
       <p>
         <strong>Amount: </strong>
-        <span>${tx['payment-transaction']['amount'] / 1e6} VOI</span>
+        <span>${ledger === 'VoiTestNet' ? tx['payment-transaction']['amount'] / 1e6 + ' VOI' : tx['payment-transaction']['amount'] / 1e6 + ' Algos'}</span>
       </p>
       <p>
         <strong>Block: </strong>

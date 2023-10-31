@@ -14,6 +14,7 @@ export function initializeCache(
       assets: {},
       accounts: {},
       availableLedgers: [],
+      network: network,
     };
   } else {
     cache = c;
@@ -26,6 +27,7 @@ export function initializeCache(
 
   return cache;
 }
+
 
 export function getAvailableNetworksFromCache(callback?: Function): Array<NetworkTemplate> | void {
   // Load network details from Cache

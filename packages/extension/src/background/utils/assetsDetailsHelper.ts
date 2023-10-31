@@ -17,7 +17,7 @@ export default class AssetsDetailsHelper {
   };
 
   private static timeouts = {
-[Network.VoiTestNet]: [],
+    [Network.VoiTestNet]: [],
     [Network.TestNet]: null,
     [Network.MainNet]: null,
   };

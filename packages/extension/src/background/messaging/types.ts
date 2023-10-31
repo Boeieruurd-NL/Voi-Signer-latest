@@ -1,4 +1,5 @@
-import { NetworkTemplate } from '@voisigner/common/types/network';
+import { WalletStorage } from '@voisigner/common/types';
+import { Network, NetworkTemplate } from '@voisigner/common/types/network';
 
 // Key and value must match in this enum so we
 // can compare its existance with i.e. "TestNet" in SupportedLedger
@@ -42,6 +43,7 @@ export interface Cache {
   */
   assets: object;
   accounts: object;
+  network: Network;
   // Legacy name, renaming could break stored caches
   availableLedgers: Array<NetworkTemplate>;
 }

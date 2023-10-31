@@ -21,7 +21,7 @@ const Account: FunctionalComponent = (props: any) => {
 
   const rewardsTooltip =
     details &&
-    `VOI: ${numFormat(
+    `${ledger === 'VoiTestNet' ? 'VOI' : 'Algo'}: ${numFormat(
       details['amount-without-pending-rewards'] / 1e6,
       6
     )}`;
@@ -77,7 +77,7 @@ const Account: FunctionalComponent = (props: any) => {
           details &&
           html`
             <span>${numFormat(details.amount / 1e6, 6)} </span>
-            <span class="has-text-grey-light">VOI</span>
+            <span class="has-text-grey-light">${ledger === 'VoiTestNet' ? 'VOI' : 'Algos'}</span>
             <i
               class="far fa-question-circle px-1 has-tooltip-arrow has-tooltip-right has-tooltip-fade"
               data-tooltip="${rewardsTooltip}"

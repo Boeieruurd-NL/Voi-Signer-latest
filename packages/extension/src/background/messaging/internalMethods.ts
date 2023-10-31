@@ -112,28 +112,36 @@ export class InternalMethods {
     });
   }
 
-  static validateSession(callback) {
+  public static validateSession(callback){
+    /////////////////////////////////////////////////////////
+    // TODO MV3: Validate session (partial)
+    // Rebuild from cache if service worker has shut down
+    /////////////////////////////////////////////////////////   
     if (!session.wallet) {
       const extensionStorage = new ExtensionStorage();
-      // If it doesn't exist, get the cache from the storage
       extensionStorage.getStorage('cache', (response: any) => {
-        // If the response exists, assign the values to the session
+        // TODO MV3: The cache here contains accounts, assets, availableLedgers
+        // *Need to save additional information in the cache of network and txnRequest to rebuild*
+        // *May want to save an entire cleansed wallet in cache to prevent rebuilding*
+
+        // Example of what we will need is below
+        // [WARNING] - These are not yet part of the cache so leaving a logging warning for now
+        logging.log(`[WARNING] - Attempting to get cache information that does not exist.`)
         if(response) {
           session.wallet =  response.wallet as WalletStorage;
           session.network =  response.ledger as Network;
           session.availableNetworks =  response.availableLedgers as Array<NetworkTemplate>;
           session.txnRequest =  response.txnRequest;
         }
-            callback(session);
-        });
-    } else {
-        // Ensure network is initialized
-        if (!session.wallet[session.network]) {
-            session.wallet[session.network] = [];
-        }
         callback(session);
+      });
     }
-}
+    else {
+      callback(session);
+    }   
+  }
+  
+  
 
 
   // Checks if an account for the given address exists on voisigner for a given network.

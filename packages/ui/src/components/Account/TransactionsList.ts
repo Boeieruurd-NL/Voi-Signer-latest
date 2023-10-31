@@ -153,7 +153,7 @@ const TransactionsList: FunctionalComponent = (props: any) => {
 
     switch (tx['tx-type']) {
       case 'pay':
-        info = tx['payment-transaction'].amount / 1e6 + ' VOI';
+        info = tx['payment-transaction'].amount / 1e6 + (ledger === 'VoiTestNet' ? ' VOI' : ' Algos');
         if (tx.sender === address) {
           subtitle = 'Payment To';
           title = tx['payment-transaction'].receiver;
@@ -269,7 +269,7 @@ const TransactionsList: FunctionalComponent = (props: any) => {
     let title, subtitle, info;
     switch (tx['type']) {
       case 'pay':
-        info = tx.amount / 1e6 + ' VOI';
+        info = tx.amount / 1e6 + (ledger === 'VoiTestNet' ? ' VOI' : ' Algos');
         if (tx.sender === address) {
           subtitle = 'Pending Payment to';
           title = tx.receiver;

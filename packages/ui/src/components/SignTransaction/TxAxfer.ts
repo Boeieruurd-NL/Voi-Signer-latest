@@ -73,7 +73,7 @@ const TxAxfer: FunctionalComponent = (props: any) => {
       </div>
       <div class="is-flex">
         <p style="width: 30%;">${!estFee || tx['flatFee'] ? 'Fee:' : 'Estimated fee:'}</p>
-        <p style="width: 70%;">${fee / 1e6} VOI</p>
+        <p style="width: 70%;">${fee / 1e6} ${network === 'VoiTestNet' ? 'VOI' : 'Algo'}</p>
       </div>
       <div class="is-flex">
         <p style="width: 30%;"><b>Amount:</b></p>

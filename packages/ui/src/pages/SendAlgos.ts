@@ -347,7 +347,7 @@ const SendAlgos: FunctionalComponent = (props: any) => {
                 style="border: none; width: 120px; justify-content: flex-end;"
               >
                 <span style="text-overflow: ellipsis; overflow: hidden;">
-                  ${asset['unit-name'] || asset['name'] || asset['asset-id'] || 'VOI'}
+                  ${ledger === 'VoiTestNet' ? 'VOI' : 'Algo'}
                 </span>
                 <span class="icon is-small">
                   <i class="fas fa-caret-down" aria-hidden="true"></i>
@@ -364,7 +364,7 @@ const SendAlgos: FunctionalComponent = (props: any) => {
                 >
                   <span>VOI</span>
                   <span class="ml-4 has-text-grey">
-                    ${account.details && numFormat(account.details.amount / 1e6, 6)} VOI
+                    ${ledger === 'VoiTestNet' ? 'VOI' : 'Algo'}
                   </span>
                 </a>
                 ${account.details &&

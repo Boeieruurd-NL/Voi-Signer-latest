@@ -5,7 +5,7 @@ import TxTemplate from './Common/TxTemplate';
 import ContactPreview from 'components/ContactPreview';
 
 const TxPay: FunctionalComponent = (props: any) => {
-  const { tx, account, contact, vo, estFee, msig, authAddr } = props;
+  const { tx, account, contact, vo, estFee, msig, authAddr, ledger } = props;
   const fee = estFee ? estFee : tx['fee'];
 
   const midsection = html`
@@ -40,15 +40,15 @@ const TxPay: FunctionalComponent = (props: any) => {
       `}
       <div class="is-flex">
         <p style="width: 30%;">Sending:</p>
-        <p style="width: 70%;">${tx.amount / 1e6} VOI</p>
+        <p style="width: 70%;">${ledger === 'VoiTestNet' ? tx.amount / 1e6 + ' VOI' : tx.amount / 1e6 + ' Algos'}</p>
       </div>
       <div class="is-flex">
         <p style="width: 30%;">${!estFee || tx['flatFee'] ? 'Fee:' : 'Estimated fee:'}</p>
-        <p style="width: 70%;">${fee / 1e6} VOI</p>
+        <p style="width: 70%;">${ledger === 'VoiTestNet' ? fee / 1e6 + ' VOI' : fee / 1e6 + ' Algos'}</p>
       </div>
       <div class="is-flex">
         <p style="width: 30%;"><b>Total:</b></p>
-        <p style="width: 70%;">${(+fee + +tx.amount) / 1e6} VOI</p>
+        <p style="width: 70%;">${ledger === 'VoiTestNet' ? (+fee + +tx.amount) / 1e6 + ' VOI' : (+fee + +tx.amount) / 1e6 + ' Algos'}</p>
       </div>
     </div>
   `;
