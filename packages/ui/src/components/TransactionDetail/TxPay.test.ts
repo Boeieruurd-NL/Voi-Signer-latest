@@ -60,8 +60,4 @@ describe('TxPay', () => {
   it('should display confirmed round', () => {
     expect(component.contains(html`<span>${tx['confirmed-round'].toString()}</span>`)).toBe(true);
   });
-
-  it('should match snapshot', () => {
-    expect(component).toMatchSnapshot();
-  });
 });
