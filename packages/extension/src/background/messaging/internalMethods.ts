@@ -778,17 +778,21 @@ export class InternalMethods {
     const { ledger: network, address, limit, 'next-token': token } = request.body.params;
     const indexer = Settings.getBackendParams(network, API.Indexer);
     const algod = Settings.getBackendParams(network, API.Algod);
-
-    const txList = fetch(`${indexer.url}/v2/accounts/${address}/transactions`);
+  
+    // Add query parameters for limit and next-token
+    const queryParams = new URLSearchParams({
+      limit: limit.toString(),
+      ...(token && { next: token }),
+    }).toString();
+  
+    const txList = fetch(`${indexer.url}/v2/accounts/${address}/transactions?${queryParams}`);
     const pendingTxList = fetch(`${algod.url}/v2/accounts/${address}/transactions/pending`);
   
-    txList
-      .then(response => response.json())
-      .then((txListResponse: any) => {
-        pendingTxList.then(response => response.json()).then((pendingTxsListResponse: any) => {
-          new ExtensionStorage().getStorage('cache', (cache: any) => {
-            const pending = [];
-            pendingTxsListResponse['top-transactions'].forEach((pend) => {
+    Promise.all([txList, pendingTxList].map(p => p.then(res => res.json())))
+      .then(([txListResponse, pendingTxsListResponse]) => {
+        new ExtensionStorage().getStorage('cache', (cache: any) => {
+          const pending = [];
+          pendingTxsListResponse['top-transactions'].forEach((pend) => {
               // We map algod transactions to something more readable
               let amount = pend['txn']['amt'] || pend['txn']['aamt'] || 0;
               const sender = pend['txn']['snd'];
@@ -814,19 +818,19 @@ export class InternalMethods {
               });
             });
             const uiResponse = {
-              'next-token': txListResponse['next-token'],
+              'next-token': txListResponse['next-token'], // Pass on the next-token for pagination
               'transactions': txListResponse.transactions,
               'pending': pending,
             };
             sendResponse(uiResponse);
           });
+        })
+        .catch((e: any) => {
+          sendResponse({ error: e.message });
         });
-      })
-      .catch((e: any) => {
-        sendResponse({ error: e.message });
-      });
-    return true;
-  }
+    
+      return true; // Assuming this means the request was handled asynchronously
+    }
 
   public static [JsonRpcMethod.AssetDetails](request: any, sendResponse: Function) {
     const { ledger: network } = request.body.params;
