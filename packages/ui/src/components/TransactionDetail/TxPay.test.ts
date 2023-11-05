@@ -54,7 +54,7 @@ describe('TxPay', () => {
   });
 
   it('should display amount', () => {
-    expect(component.contains(html`<span>${(tx['payment-transaction']['amount']/1e6).toString()} Algos</span>`)).toBe(true);
+    expect(component.contains(html`<span>${(tx['payment-transaction']['amount']/1e6).toString()} VOI</span>`)).toBe(true);
   });
 
   it('should display confirmed round', () => {
