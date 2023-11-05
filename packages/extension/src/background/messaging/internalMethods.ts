@@ -616,23 +616,31 @@ export class InternalMethods {
               body: JSON.stringify({ rawtxn: txnBuffer.toString('base64') }),
               headers: { 'Content-Type': 'application/x-binary' },
             })
-              .then((response) => response.json())
-              .then((response: any) => {
+              .then((response) => {
+                if (!response.ok) { // Check if response status is not ok (e.g., 400, 500, etc.)
+                  throw new Error('HTTP status ' + response.status);
+                }
+                return response.json();
+              })
+              .then((response) => {
                 sendResponse({ txId: response.txId });
               })
-              .catch((e: any) => {
-                if (e.message.includes('overspend')) {
-                  sendResponse({
-                    error: "Overspending. Your account doesn't have sufficient funds.",
-                  });
-                } else if (e.message.includes('below min')) {
-                  sendResponse({
-                    error:
-                      'Overspending. This transaction would bring your account below the minimum balance limit.',
-                  });
-                } else {
-                  sendResponse({ error: e.message });
+              .catch((e) => {
+                let errorMessage = e.message || "An unknown error occurred";
+            
+                if (e instanceof Error && e.message.startsWith('HTTP status ')) {
+                  const status = parseInt(e.message.split(' ')[2], 10);
+                  if (status === 400) {
+                    errorMessage = 'Bad Request: The server cannot or will not process the request due to an apparent client error.';
+                  }
+                  // You can add more conditions for different status codes if necessary
+                } else if (errorMessage.includes('overspend')) {
+                  errorMessage = "Overspending. Your account doesn't have sufficient funds.";
+                } else if (errorMessage.includes('below min')) {
+                  errorMessage = 'Overspending. This transaction would bring your account below the minimum balance limit.';
                 }
+                // Send the response with the error message
+                sendResponse({ error: errorMessage });
               });
           } else {
             sendResponse({ error: 'Session transaction does not match the signed transaction.' });
@@ -1043,26 +1051,48 @@ export class InternalMethods {
             method: 'POST',
             body: signedTxn.blob,
             headers: { 'Content-Type': 'application/x-msgpack' },
+          })
+            .then((response) => {
+              if (!response.ok) {
+                // If the HTTP status code is 400 or other non-2xx status, throw an error.
+                return response.text().then((text) => {
+                  throw new Error(text || 'HTTP status ' + response.status);
+                });
+              }
+              // Otherwise, parse the response as JSON
+              return response.json();
             })
-        
-            .then((response) => response.json())
-            .then((resp: any) => {
+            .then((resp) => {
+              // Handle the successful response here
               sendResponse({ txId: resp.txId });
             })
-            .catch((e: any) => {
-              if (e.message.includes('overspend')) {
+            .catch((e) => {
+              // Handle any errors thrown previously
+              let errorMessage = e.message || "An unknown error occurred";
+              
+              // Specific error handling logic
+              if (errorMessage.includes('overspend')) {
                 sendResponse({
                   error: "Overspending. Your account doesn't have sufficient funds.",
                 });
-              } else if (e.message.includes('below min')) {
+              } else if (errorMessage.includes('below min')) {
                 sendResponse({
-                  error:
-                    'Overspending. This transaction would bring your account below the minimum balance limit.',
+                  error: 'Overspending. This transaction would bring your account below the minimum balance limit.',
                 });
               } else {
-                sendResponse({ error: e.message });
+                // If the error message is from our HTTP status check, include that information
+                if (e.message.startsWith('HTTP status ')) {
+                  const status = parseInt(e.message.split(' ')[2], 10);
+                  // Map the status to a more user-friendly message if needed
+                  if (status === 400) {
+                    errorMessage = 'Bad Request: The server cannot or will not process the request due to an apparent client error.';
+                  }
+                }
+                // Respond with the final error message
+                sendResponse({ error: errorMessage });
               }
             });
+          
         }
       }
     });
