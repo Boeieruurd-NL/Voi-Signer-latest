@@ -613,7 +613,7 @@ export class InternalMethods {
 
             fetch(url, {
               method: 'POST',
-              body: JSON.stringify({ rawtxn: txnBuffer.toString('base64') }),
+              body: txnBuffer,
               headers: { 'Content-Type': 'application/x-binary' },
             })
               .then((response) => {
